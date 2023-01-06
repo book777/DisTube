@@ -1,4 +1,4 @@
-import { Client, ClientUser, Guild, Message, VoiceState } from "discord.js";
+import { Client, ClientUser, GatewayIntentBits, Guild, IntentsBitField, Message, VoiceState } from "discord.js";
 import { rawBotVoiceState, rawClientUser, rawGuild, rawMessage, rawUserVoiceState } from "./raw";
 import {
   DisTubeError,
@@ -116,6 +116,7 @@ test("checkIntents()", () => {
   const client1 = new Client({ intents: [] });
   const client2 = new Client({ intents: ["Guilds"] });
   const client3 = new Client({ intents: [intent] });
+  const client4 = new Client({ intents: new IntentsBitField(GatewayIntentBits.GuildVoiceStates) });
   expect(() => {
     checkIntents(client1.options);
   }).toThrow(new DisTubeError("MISSING_INTENTS", intent));
@@ -123,6 +124,7 @@ test("checkIntents()", () => {
     checkIntents(client2.options);
   }).toThrow(new DisTubeError("MISSING_INTENTS", intent));
   expect(checkIntents(client3.options)).toBeUndefined();
+  expect(checkIntents(client4.options)).toBeUndefined();
 });
 
 test("isURL()", () => {

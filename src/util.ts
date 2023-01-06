@@ -77,7 +77,9 @@ export function isURL(input: any): input is `http://${string}` | `https://${stri
  * @param {ClientOptions} options options
  */
 export function checkIntents(options: ClientOptions): void {
-  const intents = new IntentsBitField(options.intents);
+  // instanceof is not working in compile (dist) with end projects
+  const intents = new IntentsBitField((options.intents as IntentsBitField)?.bitfield || options.intents);
+
   if (!intents.has(GatewayIntentBits.GuildVoiceStates)) throw new DisTubeError("MISSING_INTENTS", "GuildVoiceStates");
 }
 
