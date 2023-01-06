@@ -230,11 +230,21 @@ export type RelatedSong = Omit<Song, "related">;
  * @prop {boolean} [options.skip=false] Skip the playing song (if exists) and play the added playlist instantly
  * @prop {number} [options.position=0] Position of the song/playlist to add to the queue,
  * <= 0 to add to the end of the queue.
+ * @prop {number} [volume=50] Volume on created queue,
  */
 export type PlayHandlerOptions = {
   skip?: boolean;
   position?: number;
   textChannel?: GuildTextBasedChannel;
+  volume?: number;
+};
+
+/**
+ * @typedef {Object} QueueManagerOptions
+ * @prop {number} [volume=50] Volume on created queue,
+ */
+export type QueueManagerOptions = {
+  volume?: number;
 };
 
 /**
@@ -249,10 +259,12 @@ export type PlayHandlerOptions = {
  * @prop {Discord.Message} [message] Called message (For built-in search events. If this is a {@link https://developer.mozilla.org/en-US/docs/Glossary/Falsy|falsy value}, it will play the first result instead)
  * @prop {*} [metadata] Optional metadata that can be attached to the song/playlist will be played,
  * This is useful for identification purposes when the song/playlist is passed around in events.
+ * @prop {number} [volume=50] Volume on created queue,
  * See {@link Song#metadata} or {@link Playlist#metadata}
  */
 export interface PlayOptions extends PlayHandlerOptions, ResolveOptions<any> {
   message?: Message;
+  volume?: number;
 }
 
 /**

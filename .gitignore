@@ -15,8 +15,9 @@ docs
 # yarn
 .pnp.*
 .yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+
+# npm
+package-lock.json
+
+# IDE
+.idea

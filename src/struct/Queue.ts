@@ -32,7 +32,15 @@ export class Queue extends DisTubeBase {
    * @param {Song|Song[]} song First song(s)
    * @param {Discord.BaseGuildTextChannel?} textChannel Default text channel
    */
-  constructor(distube: DisTube, voice: DisTubeVoice, song: Song | Song[], textChannel?: GuildTextBasedChannel) {
+  constructor(
+    distube: DisTube,
+    voice: DisTubeVoice,
+    song: Song | Song[],
+    textChannel?: GuildTextBasedChannel,
+    options?: {
+      volume?: number;
+    },
+  ) {
     super(distube);
     /**
      * Voice connection of this queue.
@@ -48,7 +56,7 @@ export class Queue extends DisTubeBase {
      * Get or set the stream volume. Default value: `50`.
      * @type {number}
      */
-    this.volume = 50;
+    this.volume = options?.volume || 50;
     /**
      * List of songs in the queue (The first one is the playing song)
      * @type {Array<Song>}

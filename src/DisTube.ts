@@ -204,9 +204,9 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
       }
       song = await this.handler.resolve(song, { member, metadata });
       if (song instanceof Playlist) {
-        await this.handler.playPlaylist(voiceChannel, song, { textChannel, skip, position });
+        await this.handler.playPlaylist(voiceChannel, song, { textChannel, skip, position, volume: options?.volume });
       } else {
-        await this.handler.playSong(voiceChannel, song, { textChannel, skip, position });
+        await this.handler.playSong(voiceChannel, song, { textChannel, skip, position, volume: options?.volume });
       }
     } catch (e: any) {
       if (!(e instanceof DisTubeError)) {

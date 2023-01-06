@@ -1,6 +1,6 @@
 import { GuildIdManager } from ".";
 import { DisTubeError, DisTubeStream, Queue, RepeatMode, objectKeys } from "../..";
-import type { Song } from "../..";
+import type { QueueManagerOptions, Song } from "../..";
 import type { GuildTextBasedChannel, VoiceBasedChannel } from "discord.js";
 
 /**
@@ -26,10 +26,13 @@ export class QueueManager extends GuildIdManager<Queue> {
     channel: VoiceBasedChannel,
     song: Song[] | Song,
     textChannel?: GuildTextBasedChannel,
+    options?: QueueManagerOptions,
   ): Promise<Queue | true> {
     if (this.has(channel.guildId)) throw new DisTubeError("QUEUE_EXIST");
     const voice = this.voices.create(channel);
-    const queue = new Queue(this.distube, voice, song, textChannel);
+    const queue = new Queue(this.distube, voice, song, textChannel, {
+      volume: options?.volume,
+    });
     await queue._taskQueue.queuing();
     try {
       await voice.join();
