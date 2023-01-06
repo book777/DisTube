@@ -371,7 +371,7 @@ describe("DisTubeHandler#playPlaylist()", () => {
     distube.queues.get.mockReturnValue(undefined);
     distube.queues.create.mockReturnValueOnce(true);
     await expect(handler.playPlaylist(voice, playlist, { textChannel })).resolves.toBeUndefined();
-    expect(distube.queues.create).toBeCalledWith(voice, playlist.songs, textChannel);
+    expect(distube.queues.create).toBeCalledWith(voice, playlist.songs, textChannel, { volume: undefined });
     expect(distube.emit).not.toBeCalled();
     expect(playlist.songs).toContain(nsfwSong);
     const queue = new Queue.Queue(distube as any, {} as any, playlist.songs);
@@ -379,7 +379,7 @@ describe("DisTubeHandler#playPlaylist()", () => {
     distube.options.emitAddListWhenCreatingQueue = false;
     distube.queues.create.mockReturnValueOnce(queue);
     await expect(handler.playPlaylist(voice, playlist, { textChannel })).resolves.toBeUndefined();
-    expect(distube.queues.create).toBeCalledWith(voice, playlist.songs, textChannel);
+    expect(distube.queues.create).toBeCalledWith(voice, playlist.songs, textChannel, { volume: undefined });
     expect(distube.emit).not.toBeCalledWith("addList", queue, playlist);
     expect(distube.emit).toBeCalledWith("playSong", queue, playlist.songs[0]);
     expect(playlist.songs).toContain(nsfwSong);
@@ -388,12 +388,12 @@ describe("DisTubeHandler#playPlaylist()", () => {
 
   test("Play in a non-nsfw channel", async () => {
     const textChannel: any = { nsfw: false };
-    const queue = new Queue.Queue(distube as any, {} as any, song);
+    const queue = new Queue.Queue(distube as any, {} as any, song, undefined, { volume: undefined });
     queue.songs = playlist.songs;
     distube.queues.get.mockReturnValue(undefined);
     distube.queues.create.mockReturnValue(queue);
     await expect(handler.playPlaylist(voice, playlist, { textChannel })).resolves.toBeUndefined();
-    expect(distube.queues.create).toBeCalledWith(voice, playlist.songs, textChannel);
+    expect(distube.queues.create).toBeCalledWith(voice, playlist.songs, textChannel, { volume: undefined });
     expect(distube.emit).nthCalledWith(1, "addList", queue, playlist);
     expect(distube.emit).nthCalledWith(2, "playSong", queue, playlist.songs[0]);
     expect(playlist.songs).not.toContain(nsfwSong);
