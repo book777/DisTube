@@ -3,3 +3,4 @@ coverage/
 .yarn/
 .husky/
 docs/
+node_modules

@@ -1,7 +1,14 @@
-import { DisTubeBase, FilterManager } from "../core";
-import { DisTubeError, RepeatMode, Song, TaskQueue, formatDuration, objectKeys } from "..";
 import type { GuildTextBasedChannel, Snowflake } from "discord.js";
-import type { DisTube, DisTubeVoice, DisTubeVoiceEvents } from "..";
+
+import { DisTubeBase } from "../core/DisTubeBase";
+import type { DisTubeVoice } from "../core/DisTubeVoice";
+import { FilterManager } from "../core/manager/FilterManager";
+import type DisTube from "../DisTube";
+import { DisTubeVoiceEvents, RepeatMode } from "../type";
+import { formatDuration, objectKeys } from "../util";
+import { DisTubeError } from "./DisTubeError";
+import { Song } from "./Song";
+import { TaskQueue } from "./TaskQueue";
 
 /**
  * Represents a queue.
@@ -39,7 +46,7 @@ export class Queue extends DisTubeBase {
     textChannel?: GuildTextBasedChannel,
     options?: {
       volume?: number;
-    },
+    }
   ) {
     super(distube);
     /**

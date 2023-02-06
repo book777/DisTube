@@ -1,7 +1,7 @@
-import { Plugin } from ".";
-import { PluginType } from "..";
 import type { VoiceBasedChannel } from "discord.js";
-import type { Awaitable, PlayOptions } from "..";
+
+import { Awaitable, PlayOptions, PluginType } from "../type";
+import { Plugin } from "./Plugin";
 
 /**
  * Custom Plugin

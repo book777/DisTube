@@ -16,8 +16,5 @@ docs
 .pnp.*
 .yarn/*
 
-# npm
-package-lock.json
-
 # IDE
 .idea

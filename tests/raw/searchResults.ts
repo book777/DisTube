@@ -3,7 +3,7 @@ export const firstPlaylistInfo = {
   thumbnail: {
     url: "https://i.ytimg.com/vi/3moLkjvhEu0/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA14XKyrORIifS-TIjf9cu1Z8hDPA",
     width: 336,
-    height: 188,
+    height: 188
   },
   url: "https://www.youtube.com/playlist?list=PLkqOl2GD1Tj_STgpqmpsMjqN_2j5Rvir8",
   title: "distube",
@@ -18,12 +18,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCveWMJeHgcIUPMnFzd7Vxjg",
         channelID: "UCveWMJeHgcIUPMnFzd7Vxjg",
-        name: "Disturbed",
+        name: "Disturbed"
       },
       thumbnail:
         "https://i.ytimg.com/vi/3moLkjvhEu0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLB2iwHMKdR4SeKViqLx-UR9HwOFUw",
       isLive: false,
-      duration: "4:11",
+      duration: "4:11"
     },
     {
       title: "Disturbed - Down With The Sickness [Official Music Video]",
@@ -33,12 +33,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCveWMJeHgcIUPMnFzd7Vxjg",
         channelID: "UCveWMJeHgcIUPMnFzd7Vxjg",
-        name: "Disturbed",
+        name: "Disturbed"
       },
       thumbnail:
         "https://i.ytimg.com/vi/09LTT0xwdfw/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBYSeu3wpE9Ln744sGFrEYxS7lHDw",
       isLive: false,
-      duration: "3:37",
+      duration: "3:37"
     },
     {
       title: "Disturbed - Stupify [Official Music Video]",
@@ -48,12 +48,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCveWMJeHgcIUPMnFzd7Vxjg",
         channelID: "UCveWMJeHgcIUPMnFzd7Vxjg",
-        name: "Disturbed",
+        name: "Disturbed"
       },
       thumbnail:
         "https://i.ytimg.com/vi/GVcY--XzeIc/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBIR2I-rPAgACGifAg7_9wwmIuyWA",
       isLive: false,
-      duration: "4:07",
+      duration: "4:07"
     },
     {
       title: "Godsmack - I Stand Alone (Official Music Video)",
@@ -63,12 +63,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCe9rl8k6yymUeVzzXfFGWwA",
         channelID: "UCe9rl8k6yymUeVzzXfFGWwA",
-        name: "Godsmack",
+        name: "Godsmack"
       },
       thumbnail:
         "https://i.ytimg.com/vi/OYjZK_6i37M/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCTJhGi36XXmWuxkWFTCIERq_4zrw",
       isLive: false,
-      duration: "4:56",
+      duration: "4:56"
     },
     {
       title: "System Of A Down - B.Y.O.B. (Official Video)",
@@ -78,12 +78,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UC7-YMmnc0ppcWmio8t1WdcA",
         channelID: "UC7-YMmnc0ppcWmio8t1WdcA",
-        name: "System Of A Down",
+        name: "System Of A Down"
       },
       thumbnail:
         "https://i.ytimg.com/vi/zUzd9KyIDrM/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAsxmHhtE691Sh76BsF957tq-yuqg",
       isLive: false,
-      duration: "4:23",
+      duration: "4:23"
     },
     {
       title: "System Of A Down - Chop Suey! (Official Video)",
@@ -93,12 +93,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UC7-YMmnc0ppcWmio8t1WdcA",
         channelID: "UC7-YMmnc0ppcWmio8t1WdcA",
-        name: "System Of A Down",
+        name: "System Of A Down"
       },
       thumbnail:
         "https://i.ytimg.com/vi/CSvFpBOe8eY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBGntrlv7yGSQfPdN4bXXTUMFUxiQ",
       isLive: false,
-      duration: "3:27",
+      duration: "3:27"
     },
     {
       title: "Drowning Pool - Bodies",
@@ -108,12 +108,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCRFHKKNGdaIs9NaULSUuKGw",
         channelID: "UCRFHKKNGdaIs9NaULSUuKGw",
-        name: "Drowning Pool",
+        name: "Drowning Pool"
       },
       thumbnail:
         "https://i.ytimg.com/vi/04F4xlWSFh0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCrnDKQ4Rfqnx9qt6FrK9FzxznshQ",
       isLive: false,
-      duration: "3:40",
+      duration: "3:40"
     },
     {
       title: "Drowning Pool - Step Up",
@@ -123,12 +123,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCRFHKKNGdaIs9NaULSUuKGw",
         channelID: "UCRFHKKNGdaIs9NaULSUuKGw",
-        name: "Drowning Pool",
+        name: "Drowning Pool"
       },
       thumbnail:
         "https://i.ytimg.com/vi/Co5n2RVbWM0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLB3rdoqRQ8Nno9nXK8B8epUFiMxRQ",
       isLive: false,
-      duration: "3:23",
+      duration: "3:23"
     },
     {
       title: "Disturbed - down with the sickness",
@@ -138,12 +138,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/user/xJuliiaJewelx",
         channelID: "UCIG-qQkc8nrazBcLPIrbTPA",
-        name: "xJuliiaJewelx",
+        name: "xJuliiaJewelx"
       },
       thumbnail:
         "https://i.ytimg.com/vi/L78yVFeyvRo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDadTqyq2Q_bt9_8An8XnjsZLbFPQ",
       isLive: false,
-      duration: "4:39",
+      duration: "4:39"
     },
     {
       title: "stupify - disturbed",
@@ -153,12 +153,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/user/disturbedrocka",
         channelID: "UC-aNyA0-LT96awZKERYCTRQ",
-        name: "disturbedrocka",
+        name: "disturbedrocka"
       },
       thumbnail:
         "https://i.ytimg.com/vi/CQBNH3UFEC0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDymt-BEQ1pPCkJKvOcjTWfu6I2Sg",
       isLive: false,
-      duration: "4:35",
+      duration: "4:35"
     },
     {
       title: "Limp Bizkit - Break Stuff",
@@ -168,12 +168,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCCndqRyI-5Zl8Mutlq71ASw",
         channelID: "UCCndqRyI-5Zl8Mutlq71ASw",
-        name: "limpbizkit",
+        name: "limpbizkit"
       },
       thumbnail:
         "https://i.ytimg.com/vi/ZpUYjpKg9KY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBqjo0H2NzhILiA5XmtJlDw-6RuMg",
       isLive: false,
-      duration: "2:50",
+      duration: "2:50"
     },
     {
       title: "Limp Bizkit - Faith",
@@ -183,12 +183,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCCndqRyI-5Zl8Mutlq71ASw",
         channelID: "UCCndqRyI-5Zl8Mutlq71ASw",
-        name: "limpbizkit",
+        name: "limpbizkit"
       },
       thumbnail:
         "https://i.ytimg.com/vi/l-EdCNjumvI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAUrzUryFQPf2HdMurxsoGwzLybLQ",
       isLive: false,
-      duration: "2:45",
+      duration: "2:45"
     },
     {
       title: "Limp Bizkit- jump around",
@@ -198,12 +198,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/user/bobeen17",
         channelID: "UClDFSTgkAUvaHnvv-qw9vzw",
-        name: "bobeen17",
+        name: "bobeen17"
       },
       thumbnail:
         "https://i.ytimg.com/vi/UI-jNetj9t0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCdU7MOvU96HkOY15i9Zid2aq7JUw",
       isLive: false,
-      duration: "2:46",
+      duration: "2:46"
     },
     {
       title: "Slipknot - Psychosocial [OFFICIAL VIDEO]",
@@ -213,12 +213,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCOJZ1tna8yj8mAEITPkHNCQ",
         channelID: "UCOJZ1tna8yj8mAEITPkHNCQ",
-        name: "Slipknot",
+        name: "Slipknot"
       },
       thumbnail:
         "https://i.ytimg.com/vi/5abamRO41fE/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBeLRAt_djqKyYG9jv-vniKG-27-g",
       isLive: false,
-      duration: "5:03",
+      duration: "5:03"
     },
     {
       title: "Disturbed - Another Way To Die [Official Music Video]",
@@ -228,12 +228,12 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/channel/UCveWMJeHgcIUPMnFzd7Vxjg",
         channelID: "UCveWMJeHgcIUPMnFzd7Vxjg",
-        name: "Disturbed",
+        name: "Disturbed"
       },
       thumbnail:
         "https://i.ytimg.com/vi/HwELajFteTo/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAcbMwxa_WV95kQB4Kzqo-W-vZqyw",
       isLive: false,
-      duration: "4:15",
+      duration: "4:15"
     },
     {
       title: "A'lure Girls - ผักบุ้ง [HD]",
@@ -243,14 +243,14 @@ export const firstPlaylistInfo = {
       author: {
         url: "https://www.youtube.com/user/VertexClub7",
         channelID: "UC0qtGtAqSCgmkZFV3-5uWyA",
-        name: "Movie Reac",
+        name: "Movie Reac"
       },
       thumbnail:
         "https://i.ytimg.com/vi/4B7H6zaeOzw/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBFrToXZBo1cAOKFu5DKAOtsBkSwQ",
       isLive: false,
-      duration: "4:01",
-    },
-  ],
+      duration: "4:01"
+    }
+  ]
 };
 
 export const playlistResults = {
@@ -266,10 +266,10 @@ export const playlistResults = {
         channelID: "UC1AgotpFHNhzolUtAjPgZqQ",
         url: "https://www.youtube.com/c/Tomato6966",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 17,
+      length: 17
     },
     {
       type: "playlist" as const,
@@ -281,10 +281,10 @@ export const playlistResults = {
         channelID: "UCZtrNv8Y2bGLrX-2CUwSRkQ",
         url: "https://www.youtube.com/channel/UCZtrNv8Y2bGLrX-2CUwSRkQ",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 69,
+      length: 69
     },
     {
       type: "playlist" as const,
@@ -296,10 +296,10 @@ export const playlistResults = {
         channelID: "UCYlUOETzzVxRud28z3Nj1NQ",
         url: "https://www.youtube.com/channel/UCYlUOETzzVxRud28z3Nj1NQ",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 17,
+      length: 17
     },
     {
       type: "playlist" as const,
@@ -311,10 +311,10 @@ export const playlistResults = {
         channelID: "UCjdhsUd7lXIZN_0wFwj-Vhg",
         url: "https://www.youtube.com/c/EndWoodie",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 10,
+      length: 10
     },
     {
       type: "playlist" as const,
@@ -326,10 +326,10 @@ export const playlistResults = {
         channelID: "UC7QTTzGagzeg_Qt59CHr4aQ",
         url: "https://www.youtube.com/channel/UC7QTTzGagzeg_Qt59CHr4aQ",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 12,
+      length: 12
     },
     {
       type: "playlist" as const,
@@ -341,10 +341,10 @@ export const playlistResults = {
         channelID: "UCyucS51VsV3sJ2lBZzmM_Og",
         url: "https://www.youtube.com/channel/UCyucS51VsV3sJ2lBZzmM_Og",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 9,
+      length: 9
     },
     {
       type: "playlist" as const,
@@ -356,10 +356,10 @@ export const playlistResults = {
         channelID: "UCpODmX9cBFlBRiEnqbMemuA",
         url: "https://www.youtube.com/channel/UCpODmX9cBFlBRiEnqbMemuA",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 8,
+      length: 8
     },
     {
       type: "playlist" as const,
@@ -371,10 +371,10 @@ export const playlistResults = {
         channelID: "UC93aMBtWU8jN3Kb855pQWZQ",
         url: "https://www.youtube.com/channel/UC93aMBtWU8jN3Kb855pQWZQ",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 11,
+      length: 11
     },
     {
       type: "playlist" as const,
@@ -386,10 +386,10 @@ export const playlistResults = {
         channelID: "UC_3eSlr019IydseglwTZuKQ",
         url: "https://www.youtube.com/c/7G06",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 7,
+      length: 7
     },
     {
       type: "playlist" as const,
@@ -401,13 +401,13 @@ export const playlistResults = {
         channelID: "UC1gu4NqQ9uvmnVR7kvYFrJw",
         url: "https://www.youtube.com/user/elmongui76",
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       publishedAt: "",
-      length: 11,
-    },
+      length: 11
+    }
   ],
-  results: 366,
+  results: 366
 };
 
 export const videoResults = {
@@ -424,8 +424,8 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/oqpgPWSOHdM/hqdefault.jpg?sqp=-oaymwEjCOADEI4CSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBIDFAniSRLG21ux0JjNek6DEMHMw",
           width: 480,
-          height: 270,
-        },
+          height: 270
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -438,22 +438,22 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/ytc/AKedOLSDlEFv1TLkFq47l2X3_I2D1koTry6BKI35TmmH=s68-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/ytc/AKedOLSDlEFv1TLkFq47l2X3_I2D1koTry6BKI35TmmH=s68-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       description: "",
       views: 10521,
       duration: "8:09",
-      uploadedAt: "1 year ago",
+      uploadedAt: "1 year ago"
     },
     {
       type: "video" as const,
@@ -466,13 +466,13 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/09LTT0xwdfw/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCPFLfKQZ6EILrXEiox5oMcaxvFow",
           width: 720,
-          height: 404,
+          height: 404
         },
         {
           url: "https://i.ytimg.com/vi/09LTT0xwdfw/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDY88jNr6M7sL6AWwfLRUYnNLvkAQ",
           width: 360,
-          height: 202,
-        },
+          height: 202
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -485,22 +485,22 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/ytc/AKedOLTPrsCDm1dJbYXzadYU2WrAGaLYzd51qZqa41R_=s88-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/ytc/AKedOLTPrsCDm1dJbYXzadYU2WrAGaLYzd51qZqa41R_=s88-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: ["Official Artist Channel"],
-        verified: true,
+        verified: true
       },
       description: "",
       views: 161395588,
       duration: "3:37",
-      uploadedAt: "12 years ago",
+      uploadedAt: "12 years ago"
     },
     {
       type: "video" as const,
@@ -513,13 +513,13 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/I77mjesUbkw/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAaztN4uv4H9-Bnw5G0XHaicLZgmg",
           width: 720,
-          height: 404,
+          height: 404
         },
         {
           url: "https://i.ytimg.com/vi/I77mjesUbkw/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAYWGAF3nuDrM0NAjEInWvCQ-1IpQ",
           width: 360,
-          height: 202,
-        },
+          height: 202
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -532,22 +532,22 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/ytc/AKedOLTPrsCDm1dJbYXzadYU2WrAGaLYzd51qZqa41R_=s88-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/ytc/AKedOLTPrsCDm1dJbYXzadYU2WrAGaLYzd51qZqa41R_=s88-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: ["Official Artist Channel"],
-        verified: true,
+        verified: true
       },
       description: "",
       views: 68557519,
       duration: "4:11",
-      uploadedAt: "12 years ago",
+      uploadedAt: "12 years ago"
     },
     {
       type: "video" as const,
@@ -560,13 +560,13 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/K2NaqO6q1Ug/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDSI-ERMW5lS1yLp6oyoFN8T0ezDg",
           width: 720,
-          height: 404,
+          height: 404
         },
         {
           url: "https://i.ytimg.com/vi/K2NaqO6q1Ug/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDG-CTMgtPP9mrND0HzlSs_A3eqUQ",
           width: 360,
-          height: 202,
-        },
+          height: 202
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -579,22 +579,22 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/TaFrnP5c7L3W-gasOSm8lubulXmsJkY1dRMqTyOKJyVpKXrVU9F16cKuqADRXWBpuBGJaDUB_g4=s68-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/TaFrnP5c7L3W-gasOSm8lubulXmsJkY1dRMqTyOKJyVpKXrVU9F16cKuqADRXWBpuBGJaDUB_g4=s68-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       description: "",
       views: 1061,
       duration: "11:54",
-      uploadedAt: "7 months ago",
+      uploadedAt: "7 months ago"
     },
     {
       type: "video" as const,
@@ -607,8 +607,8 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/zSqXTQLxvII/hqdefault.jpg?sqp=-oaymwEjCOADEI4CSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDsmh1MV-8zKM8tp7dwFPzb4rN_TQ",
           width: 480,
-          height: 270,
-        },
+          height: 270
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -621,22 +621,22 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/ytc/AKedOLSqpnFkbwuBaBnIUCjhinF2EZx3d-2CPDlNsfAx7w=s68-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/ytc/AKedOLSqpnFkbwuBaBnIUCjhinF2EZx3d-2CPDlNsfAx7w=s68-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       description: "",
       views: 7345,
       duration: "5:30",
-      uploadedAt: "6 months ago",
+      uploadedAt: "6 months ago"
     },
     {
       type: "video" as const,
@@ -649,13 +649,13 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/DWSlOCEzRGo/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCr8c-JKZPs9Eocev8UluaHrL6_2A",
           width: 720,
-          height: 404,
+          height: 404
         },
         {
           url: "https://i.ytimg.com/vi/DWSlOCEzRGo/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCysl4WW_KMvXrYEUMwGZMc502Nnw",
           width: 360,
-          height: 202,
-        },
+          height: 202
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -668,22 +668,22 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/ytc/AKedOLTPrsCDm1dJbYXzadYU2WrAGaLYzd51qZqa41R_=s88-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/ytc/AKedOLTPrsCDm1dJbYXzadYU2WrAGaLYzd51qZqa41R_=s88-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: ["Official Artist Channel"],
-        verified: true,
+        verified: true
       },
       description: "",
       views: 39998435,
       duration: "3:45",
-      uploadedAt: "12 years ago",
+      uploadedAt: "12 years ago"
     },
     {
       type: "video" as const,
@@ -696,13 +696,13 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/tbPqM6JcGA4/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBGzjqv86A0ml10BXDIVWiTQhhyPQ",
           width: 720,
-          height: 404,
+          height: 404
         },
         {
           url: "https://i.ytimg.com/vi/tbPqM6JcGA4/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBIfdmC0XBstgiFdVm_HEOpiz4VPQ",
           width: 360,
-          height: 202,
-        },
+          height: 202
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -715,22 +715,22 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/ytc/AKedOLQoucOrZF-ODh_RYBz3RZdmAFEyPBXuBW3ePwec=s68-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/ytc/AKedOLQoucOrZF-ODh_RYBz3RZdmAFEyPBXuBW3ePwec=s68-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       description: "",
       views: 7762,
       duration: "16:44",
-      uploadedAt: "1 year ago",
+      uploadedAt: "1 year ago"
     },
     {
       type: "video" as const,
@@ -743,8 +743,8 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/xFhpiT5Ug2E/hqdefault.jpg?sqp=-oaymwEjCOADEI4CSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLByrtS41W_GxzLNnon3fYuXIqMkbw",
           width: 480,
-          height: 270,
-        },
+          height: 270
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -757,22 +757,22 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/0tFErRKzPjU-CUxZd8KPcHXR0Tva_0RVbo7g__LhJcyqPwS6-bY5qGEC-_c2J3Bn1xom-_TU=s68-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/0tFErRKzPjU-CUxZd8KPcHXR0Tva_0RVbo7g__LhJcyqPwS6-bY5qGEC-_c2J3Bn1xom-_TU=s68-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       description: "",
       views: 43238,
       duration: "8:39",
-      uploadedAt: "4 months ago",
+      uploadedAt: "4 months ago"
     },
     {
       type: "video" as const,
@@ -785,13 +785,13 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/qP1LIkGoNX4/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCpv0RpPXSuN_uGCaYI31sG2NhFlQ",
           width: 720,
-          height: 404,
+          height: 404
         },
         {
           url: "https://i.ytimg.com/vi/qP1LIkGoNX4/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBx--wFOMQlr0urPQl-L3Mj7P1_dQ",
           width: 360,
-          height: 202,
-        },
+          height: 202
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -804,22 +804,22 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/_3kt3ilJer5yO-KQqMjWizl3OqhDymwPaETJ5y41a2Cc_xfbtTPpvabUD_HVcPSl_0KL6ZbyQA=s68-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/_3kt3ilJer5yO-KQqMjWizl3OqhDymwPaETJ5y41a2Cc_xfbtTPpvabUD_HVcPSl_0KL6ZbyQA=s68-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       description: "",
       views: 19014,
       duration: "32:12",
-      uploadedAt: "7 months ago",
+      uploadedAt: "7 months ago"
     },
     {
       type: "video" as const,
@@ -832,13 +832,13 @@ export const videoResults = {
         {
           url: "https://i.ytimg.com/vi/7l2qXRtmdho/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAN28jFogCF-9mpyEWitpVSNCFvRg",
           width: 720,
-          height: 404,
+          height: 404
         },
         {
           url: "https://i.ytimg.com/vi/7l2qXRtmdho/hq720.jpg?sqp=-oaymwEjCOgCEMoBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBwgROz1bYr11DrTrACsAno26KrTg",
           width: 360,
-          height: 202,
-        },
+          height: 202
+        }
       ],
       isUpcoming: false,
       upcoming: null,
@@ -851,23 +851,23 @@ export const videoResults = {
         bestAvatar: {
           url: "https://yt3.ggpht.com/hPi6XszmU2K1x5ADyE5RukPOh8iQFaLhqHxjdH4l37avg5UXbuTMLGqw0TnDjkBvY6u5f7Jzkg=s68-c-k-c0x00ffffff-no-rj",
           width: 68,
-          height: 68,
+          height: 68
         },
         avatars: [
           {
             url: "https://yt3.ggpht.com/hPi6XszmU2K1x5ADyE5RukPOh8iQFaLhqHxjdH4l37avg5UXbuTMLGqw0TnDjkBvY6u5f7Jzkg=s68-c-k-c0x00ffffff-no-rj",
             width: 68,
-            height: 68,
-          },
+            height: 68
+          }
         ],
         ownerBadges: [],
-        verified: false,
+        verified: false
       },
       description: "",
       views: 649,
       duration: "38:40",
-      uploadedAt: "7 months ago",
-    },
+      uploadedAt: "7 months ago"
+    }
   ],
-  results: 8447,
+  results: 8447
 };

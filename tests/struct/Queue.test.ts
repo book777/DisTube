@@ -1,16 +1,16 @@
-import { DisTubeError, Queue, Song, defaultFilters, defaultOptions } from "@";
 import type { DisTubeOptions } from "@";
+import { defaultFilters, defaultOptions, DisTubeError, Queue, Song } from "@";
 
 function createFakeHandler() {
   return {
-    resolve: jest.fn(),
+    resolve: jest.fn()
   };
 }
 
 function createFakeQueueManager() {
   return {
     remove: jest.fn(),
-    playSong: jest.fn(),
+    playSong: jest.fn()
   };
 }
 
@@ -20,7 +20,7 @@ function createFakeDisTube() {
     filters: defaultFilters,
     handler: createFakeHandler(),
     queues: createFakeQueueManager(),
-    emit: jest.fn(),
+    emit: jest.fn()
   };
 }
 
@@ -31,17 +31,17 @@ const fakeClientMember: {
   user?: any;
 } = {
   id: fakeClientUser.id,
-  user: fakeClientUser,
+  user: fakeClientUser
 };
 const fakeGuild = {
   id: "111111111111111111",
   client: { user: fakeClientUser },
-  members: { me: fakeClientMember },
+  members: { me: fakeClientMember }
 };
 const fakeVoiceChannel = {
   id: "000000000000000000",
   type: "voice",
-  guild: fakeGuild,
+  guild: fakeGuild
 };
 const voice = {
   channel: fakeVoiceChannel,
@@ -51,7 +51,7 @@ const voice = {
   unpause: jest.fn(),
   leave: jest.fn(),
   playbackDuration: 1,
-  volume: 50,
+  volume: 50
 };
 fakeClientMember.voice = voice;
 const song = new Song({ id: "xxxxxxxxxxx", url: "https://www.youtube.com/watch?v=xxxxxxxxxxx" }, { source: "test" });
@@ -248,7 +248,7 @@ describe("Queue#jump()", () => {
   test("Jump to string position", async () => {
     const position: any = "1";
     await expect(queue.jump(position)).rejects.toThrow(
-      new DisTubeError("INVALID_TYPE", "number", position, "position"),
+      new DisTubeError("INVALID_TYPE", "number", position, "position")
     );
   });
 

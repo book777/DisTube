@@ -1,4 +1,4 @@
-import { Options, defaultOptions } from "@";
+import { defaultOptions, Options } from "@";
 
 test("Default DisTubeOptions", () => {
   expect(new Options({})).toEqual({
@@ -19,7 +19,7 @@ test("Default DisTubeOptions", () => {
     emitAddSongWhenCreatingQueue: true,
     joinNewVoiceChannel: true,
     streamType: 0,
-    directLink: true,
+    directLink: true
   });
 });
 

@@ -7,8 +7,9 @@ import type {
   Message,
   Snowflake,
   VoiceBasedChannel,
-  VoiceState,
+  VoiceState
 } from "discord.js";
+
 import type { CustomPlugin, DisTubeVoice, ExtractorPlugin, Playlist, Queue, SearchResult, Song } from ".";
 
 export type Awaitable<T = any> = T | PromiseLike<T>;
@@ -309,7 +310,7 @@ export interface CustomPlaylistOptions {
 export enum RepeatMode {
   DISABLED,
   SONG,
-  QUEUE,
+  QUEUE
 }
 
 /**
@@ -320,7 +321,7 @@ export enum RepeatMode {
  */
 export enum PluginType {
   CUSTOM = "custom",
-  EXTRACTOR = "extractor",
+  EXTRACTOR = "extractor"
 }
 
 /**
@@ -331,7 +332,7 @@ export enum PluginType {
  */
 export enum SearchResultType {
   VIDEO = "video",
-  PLAYLIST = "playlist",
+  PLAYLIST = "playlist"
 }
 
 /**
@@ -343,7 +344,7 @@ export enum SearchResultType {
  */
 export enum StreamType {
   OPUS,
-  RAW,
+  RAW
 }
 
 /**
@@ -381,5 +382,5 @@ export enum Events {
   SEARCH_NO_RESULT = "searchNoResult",
   SEARCH_DONE = "searchDone",
   SEARCH_INVALID_ANSWER = "searchInvalidAnswer",
-  SEARCH_RESULT = "searchResult",
+  SEARCH_RESULT = "searchResult"
 }

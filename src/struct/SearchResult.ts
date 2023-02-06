@@ -1,5 +1,8 @@
-import { DisTubeError, SearchResultType, formatDuration, toSecond } from "..";
 import type { Playlist, Video } from "@distube/ytsr";
+
+import { SearchResultType } from "../type";
+import { formatDuration, toSecond } from "../util";
+import { DisTubeError } from "./DisTubeError";
 
 /**
  * A abstract class representing a search result.
@@ -50,7 +53,7 @@ abstract class ISearchResult {
      */
     this.uploader = {
       name: undefined,
-      url: undefined,
+      url: undefined
     };
   }
 }
@@ -101,7 +104,7 @@ export class SearchResultVideo extends ISearchResult {
     this.thumbnail = info.thumbnail;
     this.uploader = {
       name: info.author?.name,
-      url: info.author?.url,
+      url: info.author?.url
     };
   }
 }
@@ -134,7 +137,7 @@ export class SearchResultPlaylist extends ISearchResult {
     this.length = info.length;
     this.uploader = {
       name: info.owner?.name,
-      url: info.owner?.url,
+      url: info.owner?.url
     };
   }
 }

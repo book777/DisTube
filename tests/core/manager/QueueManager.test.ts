@@ -1,13 +1,12 @@
 import {
-  DisTubeError,
-  QueueManager,
-  Song,
-  DisTubeVoiceManager as _DTVM,
-  Queue as _Queue,
   defaultFilters,
   defaultOptions,
+  DisTubeError,
+  DisTubeVoiceManager as _DTVM,
+  Queue as _Queue,
+  QueueManager,
+  Song
 } from "@";
-
 import * as _Stream from "@/core/DisTubeStream";
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -25,7 +24,7 @@ function createFakeDisTube() {
     voices: new DisTubeVoiceManager(this),
     emit: jest.fn(),
     emitError: jest.fn(),
-    filters: defaultFilters,
+    filters: defaultFilters
   };
 }
 
@@ -152,8 +151,8 @@ describe("QueueManager#create()", () => {
         songs: [song],
         beginTime: 1,
         filters: {
-          size: 0,
-        },
+          size: 0
+        }
       };
       const result = queues.createStream(queue as any);
       expect(result).toBe(stream);
@@ -161,8 +160,8 @@ describe("QueueManager#create()", () => {
         song.formats,
         expect.objectContaining({
           ffmpegArgs: undefined,
-          seek: 1,
-        }),
+          seek: 1
+        })
       );
     });
 
@@ -174,7 +173,7 @@ describe("QueueManager#create()", () => {
       const queue = {
         songs: [song2],
         filters: { size: 2, values: [distube.filters["3d"], distube.filters.bassboost] },
-        beginTime: 1,
+        beginTime: 1
       };
       const result = queues.createStream(queue as _Queue);
       expect(result).toBe(stream2);
@@ -182,8 +181,8 @@ describe("QueueManager#create()", () => {
         song2.url,
         expect.objectContaining({
           ffmpegArgs: ["-af", `${distube.filters["3d"]},${distube.filters.bassboost}`],
-          seek: undefined,
-        }),
+          seek: undefined
+        })
       );
     });
   });

@@ -1,9 +1,12 @@
-import { Playlist } from "./Playlist";
-import { DisTubeError, formatDuration, isMemberInstance, parseNumber, toSecond } from "..";
-import type ytpl from "@distube/ytpl";
 import type ytdl from "@distube/ytdl-core";
+import type ytpl from "@distube/ytpl";
 import type { GuildMember } from "discord.js";
-import type { Chapter, OtherSongInfo, RelatedSong, SearchResult } from "..";
+
+import type { Chapter, OtherSongInfo, RelatedSong } from "../type";
+import { formatDuration, isMemberInstance, parseNumber, toSecond } from "../util";
+import { DisTubeError } from "./DisTubeError";
+import { Playlist } from "./Playlist";
+import type { SearchResult } from "./SearchResult";
 
 /**
  * Class representing a song.
@@ -60,7 +63,7 @@ export class Song<T = unknown> {
       member?: GuildMember;
       source?: string;
       metadata?: T;
-    } = {},
+    } = {}
   ) {
     const { member, source, metadata } = { source: "youtube", ...options };
 
@@ -102,7 +105,7 @@ export class Song<T = unknown> {
       const err = require("@distube/ytdl-core/lib/utils").playError(info.player_response, [
         "UNPLAYABLE",
         "LIVE_STREAM_OFFLINE",
-        "LOGIN_REQUIRED",
+        "LOGIN_REQUIRED"
       ]);
       if (err) throw err;
 
@@ -182,7 +185,7 @@ export class Song<T = unknown> {
      */
     this.uploader = {
       name: info.uploader?.name || details.author?.name,
-      url: info.uploader?.url || details.author?.channel_url || details.author?.url,
+      url: info.uploader?.url || details.author?.channel_url || details.author?.url
     };
     /**
      * Whether or not an age-restricted content
@@ -229,12 +232,12 @@ export class Song<T = unknown> {
     if (typeof info.uploader === "string") {
       this.uploader = {
         name: info.uploader,
-        url: info.uploader_url,
+        url: info.uploader_url
       };
     } else {
       this.uploader = {
         name: info.uploader?.name,
-        url: info.uploader?.url,
+        url: info.uploader?.url
       };
     }
     this.age_restricted = info.age_restricted || (!!info.age_limit && parseNumber(info.age_limit) >= 18);

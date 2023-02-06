@@ -1,6 +1,6 @@
-import { BaseManager } from ".";
-import { resolveGuildId } from "../..";
-import type { GuildIdResolvable } from "../..";
+import type { GuildIdResolvable } from "../../type";
+import { resolveGuildId } from "../../util";
+import { BaseManager } from "./BaseManager";
 
 /**
  * Manages the collection of a data model paired with a guild id.

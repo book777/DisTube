@@ -1,5 +1,5 @@
-import { StreamType } from ".";
-import type { Filters } from ".";
+import type { Filters } from "./type";
+import { StreamType } from "./type";
 
 /**
  * Default DisTube audio filters.
@@ -35,7 +35,7 @@ export const defaultFilters: Filters = {
   phaser: "aphaser",
   tremolo: "tremolo",
   surround: "surround",
-  earwax: "earwax",
+  earwax: "earwax"
 };
 
 export const defaultOptions = {
@@ -54,5 +54,5 @@ export const defaultOptions = {
   emitAddListWhenCreatingQueue: true,
   joinNewVoiceChannel: true,
   streamType: StreamType.OPUS,
-  directLink: true,
+  directLink: true
 };

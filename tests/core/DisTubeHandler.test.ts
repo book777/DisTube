@@ -1,12 +1,13 @@
-import { firstPlaylistInfo, playlistResults, videoResults } from "../raw";
-import { DisTubeError, DisTubeHandler, defaultFilters, defaultOptions } from "@";
-import { Playlist, SearchResultPlaylist, SearchResultVideo, Song } from "@/struct";
-import type { DisTubeOptions } from "@";
-
-import * as _ytpl from "@distube/ytpl";
 import * as _ytdl from "@distube/ytdl-core";
-import * as _Util from "@/util";
+import * as _ytpl from "@distube/ytpl";
+
+import type { DisTubeOptions } from "@";
+import { defaultFilters, defaultOptions, DisTubeError, DisTubeHandler } from "@";
+import { Playlist, SearchResultPlaylist, SearchResultVideo, Song } from "@/struct";
 import * as _Queue from "@/struct/Queue";
+import * as _Util from "@/util";
+
+import { firstPlaylistInfo, playlistResults, videoResults } from "../raw";
 
 jest.useFakeTimers();
 jest.mock("@distube/ytpl");
@@ -23,19 +24,19 @@ const Queue = _Queue as unknown as jest.Mocked<typeof _Queue>;
 function createFakeQueueManager() {
   return {
     create: jest.fn(),
-    get: jest.fn(),
+    get: jest.fn()
   };
 }
 
 function createFakeVoiceManager() {
   return {
-    leave: jest.fn(),
+    leave: jest.fn()
   };
 }
 
 const extractor = {
   validate: jest.fn(),
-  resolve: jest.fn(),
+  resolve: jest.fn()
 };
 
 function createFakeDisTube() {
@@ -49,9 +50,9 @@ function createFakeDisTube() {
     search: jest.fn(),
     listenerCount: jest.fn(),
     client: {
-      on: jest.fn(),
+      on: jest.fn()
     },
-    createCustomPlaylist: jest.fn(),
+    createCustomPlaylist: jest.fn()
   };
 }
 function createV13Message(answerMessage?: any): any {
@@ -63,9 +64,9 @@ function createV13Message(answerMessage?: any): any {
           const a = [answerMessage].filter(opt.filter)[0];
           if (!a || opt.max !== 1) reject();
           resolve({ first: () => answerMessage });
-        }),
+        })
     },
-    author: { id: 1 },
+    author: { id: 1 }
   };
 }
 function createV12Message(answerMessage: any): any {
@@ -77,9 +78,9 @@ function createV12Message(answerMessage: any): any {
           const a = [answerMessage].filter(filter)[0];
           if (!a || opt.max !== 1) reject();
           resolve({ first: () => answerMessage });
-        }),
+        })
     },
-    author: { id: 1 },
+    author: { id: 1 }
   };
 }
 
@@ -89,7 +90,7 @@ const plResult = new SearchResultPlaylist(playlistResults.items[0] as any);
 const metadata = { test: "sth" };
 const song = new Song(
   { id: "xxxxxxxxxxx", url: "https://www.youtube.com/watch?v=xxxxxxxxxxx", src: "youtube" },
-  { member, metadata },
+  { member, metadata }
 );
 const anotherSong = new Song({ id: "y", url: "https://www.youtube.com/watch?v=y", src: "test" }, { member, metadata });
 const nsfwSong = new Song({ id: "z", url: "z url", age_restricted: true, src: "test" }, { member, metadata });
@@ -262,10 +263,10 @@ describe("DisTubeHandler#resolve()", () => {
 
   test("Parameter is null or undefined", async () => {
     await expect(handler.resolve(null, { member, metadata })).rejects.toThrowError(
-      new DisTubeError("CANNOT_RESOLVE_SONG", null),
+      new DisTubeError("CANNOT_RESOLVE_SONG", null)
     );
     await expect(handler.resolve(undefined, { member, metadata })).rejects.toThrowError(
-      new DisTubeError("CANNOT_RESOLVE_SONG", undefined),
+      new DisTubeError("CANNOT_RESOLVE_SONG", undefined)
     );
   });
 
@@ -347,22 +348,22 @@ describe("DisTubeHandler#playPlaylist()", () => {
 
   test("Invalid Playlist", async () => {
     await expect(handler.playPlaylist(voice, undefined as any)).rejects.toThrow(
-      new DisTubeError("INVALID_TYPE", "Playlist", undefined, "playlist"),
+      new DisTubeError("INVALID_TYPE", "Playlist", undefined, "playlist")
     );
     await expect(handler.playPlaylist(voice, "not a Playlist" as any)).rejects.toThrow(
-      new DisTubeError("INVALID_TYPE", "Playlist", "not a Playlist", "playlist"),
+      new DisTubeError("INVALID_TYPE", "Playlist", "not a Playlist", "playlist")
     );
   });
 
   test("No valid video in the playlist", async () => {
     const pl1 = new Playlist([nsfwSong]);
     await expect(handler.playPlaylist(voice, pl1, { textChannel: { nsfw: false } } as any)).rejects.toThrow(
-      new DisTubeError("EMPTY_FILTERED_PLAYLIST"),
+      new DisTubeError("EMPTY_FILTERED_PLAYLIST")
     );
     const pl2 = new Playlist([new Song({ age_restricted: true, url: "test url", src: "test" }, { member })]);
     pl2.songs = [];
     await expect(handler.playPlaylist(voice, pl2, { textChannel: { nsfw: true } } as any)).rejects.toThrow(
-      new DisTubeError("EMPTY_PLAYLIST"),
+      new DisTubeError("EMPTY_PLAYLIST")
     );
   });
 
@@ -406,7 +407,7 @@ describe("DisTubeHandler#playPlaylist()", () => {
     queue.songs = playlist.songs;
     distube.queues.get.mockReturnValue(queue);
     await expect(
-      handler.playPlaylist(voice, playlist, { textChannel, skip: true, position: 1 }),
+      handler.playPlaylist(voice, playlist, { textChannel, skip: true, position: 1 })
     ).resolves.toBeUndefined();
     expect(queue.addToQueue).toBeCalledWith(playlist.songs, 1);
     expect(queue.skip).toBeCalledTimes(1);
@@ -421,7 +422,7 @@ describe("DisTubeHandler#playPlaylist()", () => {
     queue.songs = playlist.songs;
     distube.queues.get.mockReturnValue(queue);
     await expect(
-      handler.playPlaylist(voice, playlist, { textChannel, skip: false, position: 1 }),
+      handler.playPlaylist(voice, playlist, { textChannel, skip: false, position: 1 })
     ).resolves.toBeUndefined();
     expect(queue.addToQueue).toBeCalledWith(playlist.songs, 1);
     expect(queue.skip).not.toBeCalled();
@@ -449,11 +450,11 @@ describe("DisTubeHandler#searchSong()", () => {
     Util.isMessageInstance.mockReturnValue(true);
     Util.isMessageInstance.mockReturnValueOnce(false);
     await expect(handler.searchSong(null, "")).rejects.toThrow(
-      new DisTubeError("INVALID_TYPE", "Discord.Message", null, "message"),
+      new DisTubeError("INVALID_TYPE", "Discord.Message", null, "message")
     );
     const message = createV13Message();
     await expect(handler.searchSong(message, 0 as any)).rejects.toThrow(
-      new DisTubeError("INVALID_TYPE", "string", 0, "query"),
+      new DisTubeError("INVALID_TYPE", "string", 0, "query")
     );
     await expect(handler.searchSong(message, "")).rejects.toThrow(new DisTubeError("EMPTY_STRING", "query"));
   });
@@ -501,8 +502,8 @@ describe("DisTubeHandler#searchSong()", () => {
       query,
       expect.objectContaining({
         limit: 1,
-        safeSearch: true,
-      }),
+        safeSearch: true
+      })
     );
   });
 
@@ -525,8 +526,8 @@ describe("DisTubeHandler#searchSong()", () => {
         query,
         expect.objectContaining({
           limit: 5,
-          safeSearch: false,
-        }),
+          safeSearch: false
+        })
       );
       expect(distube.emit).nthCalledWith(1, "searchResult", message, results, query);
       expect(distube.emit).nthCalledWith(2, "searchDone", message, ans, query);
@@ -608,10 +609,10 @@ describe("DisTubeHandler#createSearchMessageCollector()", () => {
     Util.isMessageInstance.mockReturnValue(true);
     Util.isMessageInstance.mockReturnValueOnce(false);
     await expect(handler.createSearchMessageCollector(null, null)).rejects.toThrow(
-      new DisTubeError("INVALID_TYPE", "Discord.Message", null, "message"),
+      new DisTubeError("INVALID_TYPE", "Discord.Message", null, "message")
     );
     await expect(handler.createSearchMessageCollector(null, null)).rejects.toThrow(
-      new DisTubeError("INVALID_TYPE", "Array<SearchResult|Song|Playlist>", null, "results"),
+      new DisTubeError("INVALID_TYPE", "Array<SearchResult|Song|Playlist>", null, "results")
     );
   });
 });

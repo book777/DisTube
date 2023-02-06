@@ -1,5 +1,6 @@
-import { DisTubeBase } from "..";
 import { Collection } from "discord.js";
+
+import { DisTubeBase } from "../DisTubeBase";
 
 /**
  * Manages the collection of a data model.

@@ -1,7 +1,7 @@
-import { DisTubeError, DisTubeVoice } from "@";
-
-import * as _Util from "@/util";
 import * as _DiscordVoice from "@discordjs/voice";
+
+import { DisTubeError, DisTubeVoice } from "@";
+import * as _Util from "@/util";
 
 jest.useFakeTimers();
 jest.mock("@/util");
@@ -15,7 +15,7 @@ const client = { user: { id: 3 }, channels: { cache: { get: jest.fn() } } };
 const voiceManager = {
   add: jest.fn(),
   remove: jest.fn(),
-  client,
+  client
 };
 
 const voiceChannel = {
@@ -24,7 +24,7 @@ const voiceChannel = {
   guild: { id: 2, voiceAdapterCreator: () => undefined },
   client,
   joinable: true,
-  type: 2,
+  type: 2
 };
 
 const connection = {
@@ -32,7 +32,7 @@ const connection = {
     channelId: 1,
     guildId: 2,
     selfDeaf: true,
-    selfMute: false,
+    selfMute: false
   },
   emit: jest.fn(),
   on: jest.fn(),
@@ -44,9 +44,9 @@ const connection = {
   },
   destroy: jest.fn(),
   state: {
-    status: DiscordVoice.VoiceConnectionStatus.Signalling,
+    status: DiscordVoice.VoiceConnectionStatus.Signalling
   },
-  rejoinAttempts: 0,
+  rejoinAttempts: 0
 };
 
 const audioPlayer = {
@@ -55,14 +55,14 @@ const audioPlayer = {
   stop: jest.fn(),
   pause: jest.fn(),
   unpause: jest.fn(),
-  play: jest.fn(),
+  play: jest.fn()
 };
 
 const audioResource = {
   volume: {
-    setVolume: jest.fn(),
+    setVolume: jest.fn()
   },
-  playbackDuration: 1234,
+  playbackDuration: 1234
 };
 
 beforeEach(() => {
@@ -103,8 +103,8 @@ describe("Constructor", () => {
       expect.objectContaining({
         channelId: voiceChannel.id,
         guildId: voiceChannel.guildId,
-        adapterCreator: expect.any(Function),
-      }),
+        adapterCreator: expect.any(Function)
+      })
     );
     expect(voice.voices).toBe(voiceManager);
     expect(voiceManager.add).toBeCalledWith(voice.id, voice);
@@ -139,7 +139,7 @@ describe("Constructor", () => {
     DiscordVoice.entersState.mockReturnValue({ catch: catchFn } as any);
     connection.on.mock.calls[0][1](
       {},
-      { reason: DiscordVoice.VoiceConnectionDisconnectReason.WebSocketClose, closeCode: 4014 },
+      { reason: DiscordVoice.VoiceConnectionDisconnectReason.WebSocketClose, closeCode: 4014 }
     );
     catchFn.mock.calls[0][0]();
     expect(voice.leave).toBeCalledTimes(1);
@@ -319,9 +319,9 @@ describe("Methods", () => {
     DiscordVoice.createAudioResource.mockReturnValue(audioResource as any);
     const stream = {
       stream: {
-        on: jest.fn(),
+        on: jest.fn()
       },
-      type: {},
+      type: {}
     };
     expect(voice.play(stream as any)).toBeUndefined();
     expect(voice.emittedError).toBe(false);

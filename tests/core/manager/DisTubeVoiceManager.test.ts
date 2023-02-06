@@ -1,6 +1,6 @@
-import { DisTubeVoiceManager, DisTubeVoice as _DTV } from "@";
-
 import * as _DiscordVoice from "@discordjs/voice";
+
+import { DisTubeVoice as _DTV, DisTubeVoiceManager } from "@";
 
 jest.mock("@/core/DisTubeVoice");
 jest.mock("@discordjs/voice");
@@ -10,17 +10,17 @@ const DiscordVoice = _DiscordVoice as unknown as jest.Mocked<typeof _DiscordVoic
 
 function createFakeDisTube() {
   return {
-    client: { user: { id: "123" } },
+    client: { user: { id: "123" } }
   };
 }
 
 const distube = createFakeDisTube();
 const manager = new DisTubeVoiceManager(distube as any);
 const channel1: any = {
-  guildId: "123456789123456789",
+  guildId: "123456789123456789"
 };
 const channel2: any = {
-  guildId: "123456789012345678",
+  guildId: "123456789012345678"
 };
 
 test("DisTubeVoiceManager#create()", () => {
@@ -52,8 +52,8 @@ test("DisTubeVoiceManager#leave()", () => {
   const fConnection = {
     destroy: jest.fn(),
     state: {
-      status: DiscordVoice.VoiceConnectionStatus.Destroyed,
-    },
+      status: DiscordVoice.VoiceConnectionStatus.Destroyed
+    }
   };
   DiscordVoice.getVoiceConnection.mockReturnValue(fConnection as any);
   manager.leave(channel2);

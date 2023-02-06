@@ -1,7 +1,3 @@
-import { URL } from "url";
-import { DisTubeError, DisTubeVoice, Queue } from ".";
-import { Constants, GatewayIntentBits, IntentsBitField, SnowflakeUtil } from "discord.js";
-import type { GuildIdResolvable } from ".";
 import type {
   Client,
   ClientOptions,
@@ -11,8 +7,15 @@ import type {
   Message,
   Snowflake,
   VoiceBasedChannel,
-  VoiceState,
+  VoiceState
 } from "discord.js";
+import { Constants, GatewayIntentBits, IntentsBitField, SnowflakeUtil } from "discord.js";
+import { URL } from "url";
+
+import { DisTubeVoice } from "./core/DisTubeVoice";
+import { DisTubeError } from "./struct/DisTubeError";
+import { Queue } from "./struct/Queue";
+import type { GuildIdResolvable } from "./type";
 
 const formatInt = (int: number) => (int < 10 ? `0${int}` : int);
 
@@ -67,7 +70,8 @@ export function isURL(input: any): input is `http://${string}` | `https://${stri
   try {
     const url = new URL(input);
     if (!["https:", "http:"].includes(url.protocol) || !url.host) return false;
-  } catch {
+  } catch (e) {
+    console.error(e);
     return false;
   }
   return true;
@@ -161,7 +165,7 @@ export function resolveGuildId(resolvable: GuildIdResolvable): Snowflake {
     guildId = resolvable;
   } else if (isObject(resolvable)) {
     if ("guildId" in resolvable && resolvable.guildId) {
-      guildId = resolvable.guildId;
+      guildId = resolvable.guildId as string;
     } else if (resolvable instanceof Queue || resolvable instanceof DisTubeVoice || isGuildInstance(resolvable)) {
       guildId = resolvable.id;
     } else if ("guild" in resolvable && isGuildInstance(resolvable.guild)) {
@@ -179,7 +183,7 @@ export function isClientInstance(client: any): client is Client {
 export function checkInvalidKey(
   target: Record<string, any>,
   source: Record<string, any> | string[],
-  sourceName: string,
+  sourceName: string
 ) {
   if (!isObject(target)) throw new DisTubeError("INVALID_TYPE", "object", target, sourceName);
   const sourceKeys = Array.isArray(source) ? source : objectKeys(source);

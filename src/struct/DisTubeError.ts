@@ -47,7 +47,7 @@ const ERROR_MESSAGES = {
   EMPTY_FILTERED_PLAYLIST:
     "There is no valid video in the playlist\n" +
     "Maybe age-restricted contents is filtered because you are in non-NSFW channel",
-  EMPTY_PLAYLIST: "There is no valid video in the playlist",
+  EMPTY_PLAYLIST: "There is no valid video in the playlist"
 };
 
 type ErrorMessage = typeof ERROR_MESSAGES;

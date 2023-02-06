@@ -1,6 +1,12 @@
-import { DisTubeError, StreamType, checkInvalidKey, defaultOptions } from "..";
 import type ytdl from "@distube/ytdl-core";
-import type { CustomPlugin, DisTubeOptions, ExtractorPlugin, Filters } from "..";
+
+import { defaultOptions } from "../constant";
+import type { CustomPlugin } from "../struct/CustomPlugin";
+import { DisTubeError } from "../struct/DisTubeError";
+import type { ExtractorPlugin } from "../struct/ExtractorPlugin";
+import type { Filters } from "../type";
+import { DisTubeOptions, StreamType } from "../type";
+import { checkInvalidKey } from "../util";
 
 export class Options {
   plugins: (CustomPlugin | ExtractorPlugin)[];
@@ -71,7 +77,7 @@ export class Options {
         "INVALID_TYPE",
         "boolean",
         options.joinNewVoiceChannel,
-        "DisTubeOptions.joinNewVoiceChannel",
+        "DisTubeOptions.joinNewVoiceChannel"
       );
     }
     if (typeof options.youtubeCookie !== "undefined" && typeof options.youtubeCookie !== "string") {
@@ -82,7 +88,7 @@ export class Options {
         "INVALID_TYPE",
         "string",
         options.youtubeIdentityToken,
-        "DisTubeOptions.youtubeIdentityToken",
+        "DisTubeOptions.youtubeIdentityToken"
       );
     }
     if (
@@ -114,7 +120,7 @@ export class Options {
         "INVALID_TYPE",
         "boolean",
         options.emitAddSongWhenCreatingQueue,
-        "DisTubeOptions.emitAddSongWhenCreatingQueue",
+        "DisTubeOptions.emitAddSongWhenCreatingQueue"
       );
     }
     if (typeof options.emitAddListWhenCreatingQueue !== "boolean") {
@@ -122,7 +128,7 @@ export class Options {
         "INVALID_TYPE",
         "boolean",
         options.emitAddListWhenCreatingQueue,
-        "DisTubeOptions.emitAddListWhenCreatingQueue",
+        "DisTubeOptions.emitAddListWhenCreatingQueue"
       );
     }
     if (typeof options.streamType !== "number" || isNaN(options.streamType) || !StreamType[options.streamType]) {

@@ -1,28 +1,18 @@
-import ytpl from "@distube/ytpl";
 import ytdl from "@distube/ytdl-core";
-import { DisTubeBase } from ".";
-import {
-  DisTubeError,
-  Playlist,
-  Queue,
-  SearchResultPlaylist,
-  SearchResultVideo,
-  Song,
-  chooseBestVideoFormat,
-  isMessageInstance,
-  isObject,
-  isURL,
-  isVoiceChannelEmpty,
-} from "..";
+import ytpl from "@distube/ytpl";
 import type { Message, TextChannel, VoiceBasedChannel } from "discord.js";
-import type {
-  DisTube,
-  OtherSongInfo,
-  PlayHandlerOptions,
-  ResolveOptions,
-  ResolvePlaylistOptions,
-  SearchResult,
-} from "..";
+
+import type DisTube from "../DisTube";
+import { DisTubeError } from "../struct/DisTubeError";
+import { Playlist } from "../struct/Playlist";
+import { Queue } from "../struct/Queue";
+import type { SearchResult } from "../struct/SearchResult";
+import { SearchResultPlaylist, SearchResultVideo } from "../struct/SearchResult";
+import { Song } from "../struct/Song";
+import type { OtherSongInfo, PlayHandlerOptions, ResolveOptions, ResolvePlaylistOptions } from "../type";
+import { isMessageInstance, isObject, isURL, isVoiceChannelEmpty } from "../util";
+import { DisTubeBase } from "./DisTubeBase";
+import { chooseBestVideoFormat } from "./DisTubeStream";
 
 /**
  * DisTube's Handler
@@ -92,12 +82,12 @@ export class DisTubeHandler extends DisTubeBase {
   resolve<T = unknown>(song: string | SearchResult, options?: ResolveOptions<T>): Promise<Song<T> | Playlist<T>>;
   resolve<T = unknown>(
     song: ytdl.videoInfo | OtherSongInfo | ytdl.relatedVideo,
-    options?: ResolveOptions<T>,
+    options?: ResolveOptions<T>
   ): Promise<Song<T>>;
   resolve<T = unknown>(song: Playlist, options: ResolveOptions<T>): Promise<Playlist<T>>;
   resolve(
     song: string | ytdl.videoInfo | Song | Playlist | SearchResult | OtherSongInfo | ytdl.relatedVideo,
-    options?: ResolveOptions,
+    options?: ResolveOptions
   ): Promise<Song | Playlist>;
   /**
    * Resolve a url or a supported object to a {@link Song} or {@link Playlist}
@@ -107,7 +97,7 @@ export class DisTubeHandler extends DisTubeBase {
    */
   async resolve(
     song: string | ytdl.videoInfo | Song | Playlist | SearchResult | OtherSongInfo | ytdl.relatedVideo,
-    options: ResolveOptions = {},
+    options: ResolveOptions = {}
   ): Promise<Song | Playlist> {
     if (song instanceof Song || song instanceof Playlist) {
       if ("metadata" in options) song.metadata = options.metadata;
@@ -133,11 +123,11 @@ export class DisTubeHandler extends DisTubeBase {
 
   resolvePlaylist<T = unknown>(
     playlist: Playlist<T> | Song<T>[] | string,
-    options?: Omit<ResolvePlaylistOptions, "metadata">,
+    options?: Omit<ResolvePlaylistOptions, "metadata">
   ): Promise<Playlist<T>>;
   resolvePlaylist<T = undefined>(
     playlist: Playlist | Song[] | string,
-    options: ResolvePlaylistOptions<T>,
+    options: ResolvePlaylistOptions<T>
   ): Promise<Playlist<T>>;
   resolvePlaylist(playlist: Playlist | Song[] | string, options?: ResolvePlaylistOptions): Promise<Playlist>;
   /**
@@ -165,9 +155,9 @@ export class DisTubeHandler extends DisTubeBase {
           member,
           name: info.title,
           url: info.url,
-          thumbnail: songs[0].thumbnail,
+          thumbnail: songs[0].thumbnail
         },
-        { metadata },
+        { metadata }
       );
     }
     return new Playlist(playlist, { member, properties: { source }, metadata });
@@ -187,7 +177,7 @@ export class DisTubeHandler extends DisTubeBase {
     const results = await this.distube
       .search(query, {
         limit,
-        safeSearch: this.options.nsfw ? false : !(message.channel as TextChannel)?.nsfw,
+        safeSearch: this.options.nsfw ? false : !(message.channel as TextChannel)?.nsfw
       })
       .catch(() => {
         if (!this.emit("searchNoResult", message, query)) {
@@ -213,7 +203,7 @@ export class DisTubeHandler extends DisTubeBase {
   async createSearchMessageCollector<R extends SearchResult | Song | Playlist>(
     message: Message<true>,
     results: Array<R>,
-    query?: string,
+    query?: string
   ): Promise<R | null> {
     if (!isMessageInstance(message)) throw new DisTubeError("INVALID_TYPE", "Discord.Message", message, "message");
     if (!Array.isArray(results) || results.length == 0) {
@@ -225,7 +215,7 @@ export class DisTubeHandler extends DisTubeBase {
         "searchResult",
         "searchCancel",
         "searchInvalidAnswer",
-        "searchDone",
+        "searchDone"
       ] as const;
       for (const evn of searchEvents) {
         if (this.distube.listenerCount(evn) === 0) {
@@ -233,7 +223,7 @@ export class DisTubeHandler extends DisTubeBase {
           console.warn(`"searchSongs" option is disabled due to missing "${evn}" listener.`);
           console.warn(
             `If you don't want to use "${evn}" event, simply add an empty listener (not recommended):\n` +
-              `<DisTube>.on("${evn}", () => {})`,
+              `<DisTube>.on("${evn}", () => {})`
           );
           /* eslint-enable no-console */
           this.options.searchSongs = 0;
@@ -251,7 +241,7 @@ export class DisTubeHandler extends DisTubeBase {
           filter: (m: Message) => m.author.id === message.author.id,
           max: 1,
           time: this.options.searchCooldown * 1e3,
-          errors: ["time"],
+          errors: ["time"]
         })
         .catch(() => undefined);
       const ans = answers?.first();
@@ -280,7 +270,7 @@ export class DisTubeHandler extends DisTubeBase {
   async playPlaylist(
     voiceChannel: VoiceBasedChannel,
     playlist: Playlist,
-    options: PlayHandlerOptions = {},
+    options: PlayHandlerOptions = {}
   ): Promise<void> {
     const { textChannel, skip } = { skip: false, ...options };
     const position = Number(options.position) || (skip ? 1 : 0);
@@ -304,7 +294,7 @@ export class DisTubeHandler extends DisTubeBase {
       else this.emit("addList", queue, playlist);
     } else {
       const newQueue = await this.queues.create(voiceChannel, playlist.songs, textChannel, {
-        volume: options?.volume,
+        volume: options?.volume
       });
       if (newQueue instanceof Queue) {
         if (this.options.emitAddListWhenCreatingQueue) this.emit("addList", newQueue, playlist);

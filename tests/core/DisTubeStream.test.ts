@@ -1,8 +1,9 @@
 import { StreamType as DiscordVoiceStreamType } from "@discordjs/voice";
-import { liveFormats, regularFormats } from "../raw";
-import { DisTubeError, DisTubeStream, StreamType, chooseBestVideoFormat } from "@";
-
 import { FFmpeg as _FFmpeg } from "prism-media";
+
+import { chooseBestVideoFormat, DisTubeError, DisTubeStream, StreamType } from "@";
+
+import { liveFormats, regularFormats } from "../raw";
 
 jest.mock("prism-media");
 
@@ -34,7 +35,7 @@ describe("DisTubeStream.YouTube()", () => {
     expect(stream).toMatchObject({
       url,
       type: DiscordVoiceStreamType.Raw,
-      stream: expect.any(FFmpeg),
+      stream: expect.any(FFmpeg)
     });
     expect(FFmpeg).toBeCalledWith(
       expect.objectContaining({
@@ -58,9 +59,9 @@ describe("DisTubeStream.YouTube()", () => {
           "-f",
           "s16le",
           "added",
-          "arguments",
-        ]),
-      }),
+          "arguments"
+        ])
+      })
     );
   });
 
@@ -70,7 +71,7 @@ describe("DisTubeStream.YouTube()", () => {
     expect(stream).toMatchObject({
       url,
       type: DiscordVoiceStreamType.OggOpus,
-      stream: expect.any(FFmpeg),
+      stream: expect.any(FFmpeg)
     });
     expect(FFmpeg).toBeCalledWith(
       expect.objectContaining({
@@ -96,9 +97,9 @@ describe("DisTubeStream.YouTube()", () => {
           "-f",
           "opus",
           "-acodec",
-          "libopus",
-        ]),
-      }),
+          "libopus"
+        ])
+      })
     );
   });
 
@@ -126,7 +127,7 @@ describe("DisTubeStream.DirectLink()", () => {
     expect(stream).toMatchObject({
       url,
       type: DiscordVoiceStreamType.OggOpus,
-      stream: expect.any(FFmpeg),
+      stream: expect.any(FFmpeg)
     });
     expect(FFmpeg).toBeCalledWith(
       expect.objectContaining({
@@ -150,9 +151,9 @@ describe("DisTubeStream.DirectLink()", () => {
           "-f",
           "opus",
           "-acodec",
-          "libopus",
-        ]),
-      }),
+          "libopus"
+        ])
+      })
     );
   });
 

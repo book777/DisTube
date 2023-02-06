@@ -1,6 +1,7 @@
-import { BaseManager } from ".";
-import { DisTubeError } from "../..";
-import type { FilterResolvable, Queue } from "../..";
+import { DisTubeError } from "../../struct/DisTubeError";
+import type { Queue } from "../../struct/Queue";
+import type { FilterResolvable } from "../../type";
+import { BaseManager } from "./BaseManager";
 
 /**
  * Manage filters of a playing {@link Queue}

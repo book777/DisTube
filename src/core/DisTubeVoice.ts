@@ -1,24 +1,28 @@
-import { Constants } from "discord.js";
-import { TypedEmitter } from "tiny-typed-emitter";
-import { DisTubeError, isSupportedVoiceChannel } from "..";
+import type { AudioPlayer, AudioResource, VoiceConnection } from "@discordjs/voice";
 import {
   AudioPlayerStatus,
-  VoiceConnectionDisconnectReason,
-  VoiceConnectionStatus,
   createAudioPlayer,
   createAudioResource,
   entersState,
   joinVoiceChannel,
+  VoiceConnectionDisconnectReason,
+  VoiceConnectionStatus
 } from "@discordjs/voice";
 import type { Snowflake, VoiceBasedChannel, VoiceState } from "discord.js";
-import type { DisTubeStream, DisTubeVoiceEvents, DisTubeVoiceManager } from "..";
-import type { AudioPlayer, AudioResource, VoiceConnection } from "@discordjs/voice";
+import { Constants } from "discord.js";
+import { TypedEmitter } from "tiny-typed-emitter";
+
+import { DisTubeError } from "../struct/DisTubeError";
+import type { DisTubeVoiceEvents } from "../type";
+import { isSupportedVoiceChannel } from "../util";
+import type { DisTubeStream } from "./DisTubeStream";
+import type { DisTubeVoiceManager } from "./manager/DisTubeVoiceManager";
 
 /**
  * Create a voice connection to the voice channel
  */
 export class DisTubeVoice extends TypedEmitter<DisTubeVoiceEvents> {
-  readonly id: Snowflake;
+  id: Snowflake;
   readonly voices: DisTubeVoiceManager;
   readonly audioPlayer: AudioPlayer;
   connection!: VoiceConnection;
@@ -124,7 +128,7 @@ export class DisTubeVoice extends TypedEmitter<DisTubeVoiceEvents> {
       channelId: channel.id,
       guildId: this.id,
       adapterCreator: channel.guild.voiceAdapterCreator,
-      group: channel.client.user?.id,
+      group: channel.client.user?.id
     });
   }
   /**
@@ -181,7 +185,7 @@ export class DisTubeVoice extends TypedEmitter<DisTubeVoiceEvents> {
     });
     this.audioResource = createAudioResource(stream.stream, {
       inputType: stream.type,
-      inlineVolume: true,
+      inlineVolume: true
     });
     this.volume = this.#volume;
     this.audioPlayer.play(this.audioResource);
@@ -237,7 +241,7 @@ export class DisTubeVoice extends TypedEmitter<DisTubeVoiceEvents> {
     }
     return this.connection.rejoin({
       ...this.connection.joinConfig,
-      selfDeaf,
+      selfDeaf
     });
   }
   /**
@@ -251,7 +255,7 @@ export class DisTubeVoice extends TypedEmitter<DisTubeVoiceEvents> {
     }
     return this.connection.rejoin({
       ...this.connection.joinConfig,
-      selfMute,
+      selfMute
     });
   }
   /**

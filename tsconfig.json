@@ -1,10 +1,10 @@
 {
   "include": ["src/**/*.ts"],
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "node",
     "lib": ["ESNext"],
-    "target": "ES2021",
+    "target": "ESNext",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "useDefineForClassFields": true,

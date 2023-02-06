@@ -6,7 +6,7 @@ export const rawClientUser = {
   flags: 0,
   discriminator: "0000",
   bot: true,
-  avatar: "",
+  avatar: ""
 };
 
 export const rawGuild = {
@@ -39,7 +39,7 @@ export const rawGuild = {
       nsfw: false,
       name: "text",
       last_message_id: "863623849421963284",
-      id: "737499503384461325",
+      id: "737499503384461325"
     },
     {
       user_limit: 10000,
@@ -52,7 +52,7 @@ export const rawGuild = {
       nsfw: false,
       name: "Stage",
       id: "835876864458489857",
-      bitrate: 64000,
+      bitrate: 64000
     },
     {
       user_limit: 0,
@@ -64,8 +64,8 @@ export const rawGuild = {
       nsfw: false,
       name: "Voice",
       id: "853225781604646933",
-      bitrate: 64000,
-    },
+      bitrate: 64000
+    }
   ],
   presences: [],
   banner: null,
@@ -92,13 +92,13 @@ export const rawGuild = {
         public_flags: 131136,
         id: "653848088280301571",
         discriminator: "4724",
-        avatar: "",
+        avatar: ""
       },
       roles: [],
       mute: false,
       joined_at: "2020-07-28T02:39:43.588000+00:00",
       hoisted_role: null,
-      deaf: false,
+      deaf: false
     },
     {
       user: {
@@ -106,14 +106,14 @@ export const rawGuild = {
         id: "732441066992566304",
         discriminator: "0000",
         bot: true,
-        avatar: "",
+        avatar: ""
       },
       roles: [],
       mute: false,
       joined_at: "2021-02-05T10:41:10.307000+00:00",
       hoisted_role: null,
-      deaf: true,
-    },
+      deaf: true
+    }
   ],
   max_members: 100000,
   threads: [],
@@ -123,10 +123,10 @@ export const rawGuild = {
     version: 1,
     roles: { omitted: false, hash: "OnVCeDuVZdU" },
     metadata: { omitted: false, hash: "5nPQTrBMzgo" },
-    channels: { omitted: false, hash: "WCSDpgoi6A8" },
+    channels: { omitted: false, hash: "WCSDpgoi6A8" }
   },
   owner_id: "653848088280301571",
-  application_id: null,
+  application_id: null
 };
 
 export const rawMessage = {
@@ -143,7 +143,7 @@ export const rawMessage = {
     mute: false,
     joined_at: "2021-02-05T10:41:10.307000+00:00",
     hoisted_role: null,
-    deaf: true,
+    deaf: true
   },
   id: "863630752813285376",
   flags: 0,
@@ -158,10 +158,10 @@ export const rawMessage = {
     id: "732441066992566304",
     discriminator: "0000",
     bot: true,
-    avatar: "",
+    avatar: ""
   },
   attachments: [],
-  guild_id: "737499502763704370",
+  guild_id: "737499502763704370"
 };
 
 export const rawUserVoiceState = {
@@ -171,13 +171,13 @@ export const rawUserVoiceState = {
       public_flags: 131136,
       id: "653848088280301571",
       discriminator: "4724",
-      avatar: "",
+      avatar: ""
     },
     roles: [],
     mute: false,
     joined_at: "2020-07-28T02:39:43.588000+00:00",
     hoisted_role: null,
-    deaf: false,
+    deaf: false
   },
   user_id: "653848088280301571",
   suppress: false,
@@ -189,7 +189,7 @@ export const rawUserVoiceState = {
   mute: false,
   guild_id: "737499502763704370",
   deaf: false,
-  channel_id: "853225781604646933",
+  channel_id: "853225781604646933"
 };
 
 export const rawBotVoiceState = {
@@ -199,13 +199,13 @@ export const rawBotVoiceState = {
       id: "732441066992566304",
       discriminator: "0000",
       bot: true,
-      avatar: "",
+      avatar: ""
     },
     roles: [],
     mute: false,
     joined_at: "2021-02-05T10:41:10.307000+00:00",
     hoisted_role: null,
-    deaf: true,
+    deaf: true
   },
   user_id: "732441066992566304",
   suppress: false,
@@ -217,5 +217,5 @@ export const rawBotVoiceState = {
   mute: false,
   guild_id: "737499502763704370",
   deaf: true,
-  channel_id: "853225781604646933",
+  channel_id: "853225781604646933"
 };

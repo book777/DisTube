@@ -1,6 +1,8 @@
-import { playlistResults, videoResults } from "./raw";
+import { Client } from "discord.js";
+
 import {
   CustomPlugin,
+  defaultFilters,
   DisTube,
   DisTubeError,
   DisTubeHandler,
@@ -11,12 +13,11 @@ import {
   QueueManager,
   SearchResultPlaylist,
   SearchResultVideo,
-  Song,
-  defaultFilters,
+  Song
 } from "@";
-import { Client } from "discord.js";
-
 import * as _Util from "@/util";
+
+import { playlistResults, videoResults } from "./raw";
 
 jest.mock("@/util");
 
@@ -29,14 +30,14 @@ const metadata = { test: "sth" };
 const song = new Song({ id: "xxxxxxxxxxx", url: "https://www.youtube.com/watch?v=xxxxxxxxxxx" }, { member, metadata });
 const anotherSong = new Song(
   { id: "y", url: "https://www.youtube.com/watch?v=y" },
-  { member, source: "test", metadata },
+  { member, source: "test", metadata }
 );
 
 const extractor = {
   type: "extractor",
   validate: jest.fn(),
   resolve: jest.fn(),
-  init: jest.fn(),
+  init: jest.fn()
 };
 
 beforeAll(() => {
@@ -62,7 +63,7 @@ describe("Constructor", () => {
     const distube = new DisTube(client, {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      plugins: [new ExtractorPlugin(), new CustomPlugin()],
+      plugins: [new ExtractorPlugin(), new CustomPlugin()]
     });
     expect(distube.client).toBe(client);
     expect(distube.voices).toBeInstanceOf(DisTubeVoiceManager);
@@ -82,7 +83,7 @@ describe("Constructor", () => {
       leaveOnEmpty: false,
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      plugins: [new ExtractorPlugin(), new CustomPlugin()],
+      plugins: [new ExtractorPlugin(), new CustomPlugin()]
     });
     expect(distube.client).toBe(client);
     expect(distube.voices).toBeInstanceOf(DisTubeVoiceManager);
@@ -100,13 +101,13 @@ describe("DisTube#createCustomPlaylist()", () => {
   const client = new Client({ intents: ["GuildVoiceStates"] });
   Util.isClientInstance.mockReturnValueOnce(true);
   const distube = new DisTube(client, {
-    plugins: [extractor as unknown as ExtractorPlugin],
+    plugins: [extractor as unknown as ExtractorPlugin]
   });
   new DisTubeHandler(distube as any);
 
   test("songs is not an array", async () => {
     await expect(distube.createCustomPlaylist("" as any)).rejects.toThrow(
-      new DisTubeError("INVALID_TYPE", "Array", "", "songs"),
+      new DisTubeError("INVALID_TYPE", "Array", "", "songs")
     );
   });
 
@@ -126,7 +127,7 @@ describe("DisTube#createCustomPlaylist()", () => {
     const result = await distube.createCustomPlaylist(["not an url", song, anotherSong, songResult], {
       properties: { name },
       parallel: true,
-      metadata,
+      metadata
     });
     expect(result.songs.length).toBe(3);
     expect(result.songs[0]).toBe(song);
@@ -141,7 +142,7 @@ describe("DisTube#createCustomPlaylist()", () => {
     extractor.validate.mockReturnValue(false);
     const result = await distube.createCustomPlaylist(["not an url", anotherSong, song, plResult], {
       parallel: false,
-      metadata,
+      metadata
     });
     expect(result.songs.length).toBe(2);
     expect(result.songs[1]).toBe(song);

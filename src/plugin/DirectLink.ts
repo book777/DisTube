@@ -1,6 +1,8 @@
-import { request } from "undici";
-import { ExtractorPlugin, Song } from "..";
 import type { GuildMember } from "discord.js";
+import { request } from "undici";
+
+import { ExtractorPlugin } from "../struct/ExtractorPlugin";
+import { Song } from "../struct/Song";
 
 export class DirectLinkPlugin extends ExtractorPlugin {
   override async validate(url: string) {
@@ -9,7 +11,9 @@ export class DirectLinkPlugin extends ExtractorPlugin {
       const type = headers["content-type"];
 
       if (type?.startsWith("audio")) return true;
-    } catch {}
+    } catch (e) {
+      console.error(e);
+    }
     return false;
   }
 
@@ -20,9 +24,9 @@ export class DirectLinkPlugin extends ExtractorPlugin {
       {
         name: url.substring(url.lastIndexOf("/") + 1).replace(/((\?|#).*)?$/, "") || url,
         url,
-        src: "direct_link",
+        src: "direct_link"
       },
-      options,
+      options
     );
   }
 }

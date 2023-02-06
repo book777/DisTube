@@ -1,10 +1,10 @@
 import { Client, ClientUser, GatewayIntentBits, Guild, IntentsBitField, Message, VoiceState } from "discord.js";
-import { rawBotVoiceState, rawClientUser, rawGuild, rawMessage, rawUserVoiceState } from "./raw";
+
 import {
-  DisTubeError,
-  DisTubeVoice as _Voice,
   checkIntents,
   checkInvalidKey,
+  DisTubeError,
+  DisTubeVoice as _Voice,
   formatDuration,
   isClientInstance,
   isMemberInstance,
@@ -15,8 +15,10 @@ import {
   isVoiceChannelEmpty,
   parseNumber,
   resolveGuildId,
-  toSecond,
+  toSecond
 } from "@";
+
+import { rawBotVoiceState, rawClientUser, rawGuild, rawMessage, rawUserVoiceState } from "./raw";
 
 jest.mock("@/core/DisTubeVoice");
 
@@ -209,7 +211,7 @@ test("isClientInstance()", () => {
 test("checkInvalidKey()", () => {
   const target = {
     a: 0,
-    b: 1,
+    b: 1
   };
   const name = "target";
   expect(() => checkInvalidKey(0 as any, [], name)).toThrow(new DisTubeError("INVALID_TYPE", "object", 0, name));

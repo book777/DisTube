@@ -18,7 +18,7 @@ export class Queue {
     this.textChannel = textChannel;
     this._taskQueue = {
       queuing: jest.fn(),
-      resolve: jest.fn(),
+      resolve: jest.fn()
     };
     for (const method of methods) {
       this[method] = jest.fn();

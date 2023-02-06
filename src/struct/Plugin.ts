@@ -1,16 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Client, GuildTextBasedChannel } from "discord.js";
-import type {
-  Awaitable,
-  DisTube,
-  DisTubeEvents,
-  DisTubeHandler,
-  DisTubeVoiceManager,
-  Options,
-  PluginType,
-  QueueManager,
-  RelatedSong,
-} from "..";
+
+import type { DisTubeHandler } from "../core/DisTubeHandler";
+import type { Options } from "../core/DisTubeOptions";
+import type { DisTubeVoiceManager } from "../core/manager/DisTubeVoiceManager";
+import type { QueueManager } from "../core/manager/QueueManager";
+import type DisTube from "../DisTube";
+import type { Awaitable, DisTubeEvents, PluginType, RelatedSong } from "../type";
 
 /**
  * DisTube Plugin
@@ -94,6 +89,7 @@ export abstract class Plugin {
    * @param {string} _string Input string
    * @returns {boolean|Promise<boolean>}
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   validate(_string: string): Awaitable<boolean> {
     return false;
   }
@@ -112,6 +108,7 @@ export abstract class Plugin {
    * @param {string} _url Input url
    * @returns {Song[]|Promise<Song[]>}
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   getRelatedSongs(_url: string): Awaitable<RelatedSong[]> {
     return [];
   }

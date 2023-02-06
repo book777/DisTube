@@ -1,6 +1,9 @@
-import { DisTubeError, formatDuration, isMemberInstance, isRecord } from "..";
-import type { PlaylistInfo, Song } from "..";
 import type { GuildMember } from "discord.js";
+
+import type { PlaylistInfo } from "../type";
+import { formatDuration, isMemberInstance, isRecord } from "../util";
+import { DisTubeError } from "./DisTubeError";
+import type { Song } from "./Song";
 
 /**
  * Class representing a playlist.
@@ -30,7 +33,7 @@ export class Playlist<T = unknown> implements PlaylistInfo {
       member?: GuildMember;
       properties?: Record<string, any>;
       metadata?: T;
-    } = {},
+    } = {}
   ) {
     const { member, properties, metadata } = options;
 
@@ -71,7 +74,6 @@ export class Playlist<T = unknown> implements PlaylistInfo {
       this.songs = playlist.songs;
       this.name =
         playlist.name ||
-        // eslint-disable-next-line deprecation/deprecation
         playlist.title ||
         (this.songs[0].name
           ? `${this.songs[0].name} and ${this.songs.length - 1} more songs.`
@@ -80,7 +82,6 @@ export class Playlist<T = unknown> implements PlaylistInfo {
        * Playlist URL.
        * @type {string}
        */
-      // eslint-disable-next-line deprecation/deprecation
       this.url = playlist.url || playlist.webpage_url;
       /**
        * Playlist thumbnail.

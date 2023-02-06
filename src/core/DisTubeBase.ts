@@ -1,5 +1,11 @@
 import type { Client, GuildTextBasedChannel } from "discord.js";
-import type { DisTube, DisTubeEvents, DisTubeHandler, DisTubeVoiceManager, Options, QueueManager } from "..";
+
+import type DisTube from "../DisTube";
+import type { DisTubeEvents } from "../type";
+import type { DisTubeHandler } from "./DisTubeHandler";
+import type { Options } from "./DisTubeOptions";
+import type { DisTubeVoiceManager } from "./manager/DisTubeVoiceManager";
+import type { QueueManager } from "./manager/QueueManager";
 
 /**
  * @private

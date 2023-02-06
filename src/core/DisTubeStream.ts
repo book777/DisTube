@@ -1,8 +1,10 @@
-import { FFmpeg } from "prism-media";
-import { DisTubeError, isURL } from "..";
 import { StreamType as DiscordVoiceStreamType } from "@discordjs/voice";
 import type ytdl from "@distube/ytdl-core";
-import type { StreamType } from "..";
+import { FFmpeg } from "prism-media";
+
+import { DisTubeError } from "../struct/DisTubeError";
+import type { StreamType } from "../type";
+import { isURL } from "../util";
 
 interface StreamOptions {
   seek?: number;
@@ -94,7 +96,7 @@ export class DisTubeStream {
       "48000",
       "-ac",
       "2",
-      "-f",
+      "-f"
     ];
     if (!options.type) {
       args.push("opus", "-acodec", "libopus");

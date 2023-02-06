@@ -28,7 +28,7 @@ export const regularFormats: videoFormat[] = [
     audioCodec: "mp4a.40.2",
     isLive: false,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/mp4; codecs="avc1.4d400d"',
@@ -41,11 +41,11 @@ export const regularFormats: videoFormat[] = [
     height: 240,
     initRange: {
       start: "0",
-      end: "671",
+      end: "671"
     },
     indexRange: {
       start: "672",
-      end: "727",
+      end: "727"
     },
     lastModified: "1415159828324510",
     contentLength: "307255",
@@ -62,7 +62,7 @@ export const regularFormats: videoFormat[] = [
     audioCodec: null,
     isLive: false,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/webm; codecs="vp9"',
@@ -75,11 +75,11 @@ export const regularFormats: videoFormat[] = [
     height: 240,
     initRange: {
       start: "0",
-      end: "198",
+      end: "198"
     },
     indexRange: {
       start: "199",
-      end: "231",
+      end: "231"
     },
     lastModified: "1545098927083612",
     contentLength: "117269",
@@ -96,7 +96,7 @@ export const regularFormats: videoFormat[] = [
     audioCodec: null,
     isLive: false,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/mp4; codecs="avc1.4d400c"',
@@ -109,11 +109,11 @@ export const regularFormats: videoFormat[] = [
     height: 144,
     initRange: {
       start: "0",
-      end: "671",
+      end: "671"
     },
     indexRange: {
       start: "672",
-      end: "727",
+      end: "727"
     },
     lastModified: "1415159828322464",
     contentLength: "136637",
@@ -130,7 +130,7 @@ export const regularFormats: videoFormat[] = [
     audioCodec: null,
     isLive: false,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/webm; codecs="vp9"',
@@ -143,11 +143,11 @@ export const regularFormats: videoFormat[] = [
     height: 144,
     initRange: {
       start: "0",
-      end: "197",
+      end: "197"
     },
     indexRange: {
       start: "198",
-      end: "230",
+      end: "230"
     },
     lastModified: "1545098927068906",
     contentLength: "88839",
@@ -164,7 +164,7 @@ export const regularFormats: videoFormat[] = [
     audioCodec: null,
     isLive: false,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'audio/webm; codecs="opus"',
@@ -175,11 +175,11 @@ export const regularFormats: videoFormat[] = [
     url: "https://r3---sn-8qj-i5o6k.googlevideo.com/videoplayback?expire=1626194393&ei=eW3tYPexGYfBqQHiuKtQ&ip=123.24.218.183&id=o-AFg40YOoGyvfl8DZfJnMYjl8FkNJa9TxV9UrxBvpYjir&itag=251&source=youtube&requiressl=yes&mh=c_&mm=31%2C29&mn=sn-8qj-i5o6k%2Csn-i3b7knsd&ms=au%2Crdu&mv=m&mvi=3&pl=23&initcwndbps=1803750&vprv=1&mime=audio%2Fwebm&ns=uo4LYoYvcyV6qyXmpZiSV-YG&gir=yes&clen=127836&dur=10.141&lmt=1563631260971932&mt=1626172614&fvip=3&keepalive=yes&fexp=24001373%2C24007246&c=WEB&n=XkCqqNF6bFUG4T3V7f&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIgQXlC-yIPXFBqp4lMy6BcyUjClD4M0DQRkg0Mb3oK6wwCIQCzI5mkGGAOosJKk3ls3k8WtbCdFwVeBu5q_0v-4__UYg%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIgWkux2v8PYDsNq03Mg4seccm8JiohMu9M8VQBDVu5gkECIQCjKMypsHDOnFXvviw0VGZcB952KbgDi25HZf681jKrFA%3D%3D&ratebypass=yes",
     initRange: {
       start: "0",
-      end: "258",
+      end: "258"
     },
     indexRange: {
       start: "259",
-      end: "292",
+      end: "292"
     },
     lastModified: "1563631260971932",
     contentLength: "127836",
@@ -198,7 +198,7 @@ export const regularFormats: videoFormat[] = [
     audioCodec: "opus",
     isLive: false,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'audio/mp4; codecs="mp4a.40.2"',
@@ -209,11 +209,11 @@ export const regularFormats: videoFormat[] = [
     url: "https://r3---sn-8qj-i5o6k.googlevideo.com/videoplayback?expire=1626194393&ei=eW3tYPexGYfBqQHiuKtQ&ip=123.24.218.183&id=o-AFg40YOoGyvfl8DZfJnMYjl8FkNJa9TxV9UrxBvpYjir&itag=140&source=youtube&requiressl=yes&mh=c_&mm=31%2C29&mn=sn-8qj-i5o6k%2Csn-i3b7knsd&ms=au%2Crdu&mv=m&mvi=3&pl=23&initcwndbps=1803750&vprv=1&mime=audio%2Fmp4&ns=uo4LYoYvcyV6qyXmpZiSV-YG&gir=yes&clen=122956&dur=10.123&lmt=1415159832719141&mt=1626172614&fvip=3&keepalive=yes&fexp=24001373%2C24007246&c=WEB&n=XkCqqNF6bFUG4T3V7f&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&sig=AOq0QJ8wRQIhANsZ0394ilgEeR4G48UnKHlWE3qxupIRZKYg60iDjktdAiAFXhIq8CE-I0fITS-nOVLPU6R7AIiAVAj9K-EoSwaSkQ%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIgWkux2v8PYDsNq03Mg4seccm8JiohMu9M8VQBDVu5gkECIQCjKMypsHDOnFXvviw0VGZcB952KbgDi25HZf681jKrFA%3D%3D&ratebypass=yes",
     initRange: {
       start: "0",
-      end: "591",
+      end: "591"
     },
     indexRange: {
       start: "592",
-      end: "647",
+      end: "647"
     },
     lastModified: "1415159832719141",
     contentLength: "122956",
@@ -233,8 +233,8 @@ export const regularFormats: videoFormat[] = [
     audioCodec: "mp4a.40.2",
     isLive: false,
     isHLS: false,
-    isDashMPD: false,
-  },
+    isDashMPD: false
+  }
 ];
 
 export const liveFormats: (
@@ -256,7 +256,7 @@ export const liveFormats: (
     audioCodec: "aac",
     isLive: true,
     isHLS: true,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/ts; codecs="H.264, aac"',
@@ -273,7 +273,7 @@ export const liveFormats: (
     audioCodec: "aac",
     isLive: true,
     isHLS: true,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/ts; codecs="H.264, aac"',
@@ -290,7 +290,7 @@ export const liveFormats: (
     audioCodec: "aac",
     isLive: true,
     isHLS: true,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/ts; codecs="H.264, aac"',
@@ -307,7 +307,7 @@ export const liveFormats: (
     audioCodec: "aac",
     isLive: true,
     isHLS: true,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/ts; codecs="H.264, aac"',
@@ -324,7 +324,7 @@ export const liveFormats: (
     audioCodec: "aac",
     isLive: true,
     isHLS: true,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/ts; codecs="H.264, aac"',
@@ -341,7 +341,7 @@ export const liveFormats: (
     audioCodec: "aac",
     isLive: true,
     isHLS: true,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/webm; codecs="vp9"',
@@ -361,7 +361,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: true,
+    isDashMPD: true
   },
   {
     mimeType: 'video/mp4; codecs="avc1.640028"',
@@ -386,7 +386,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/webm; codecs="vp9"',
@@ -411,7 +411,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/mp4; codecs="avc1.4d401f"',
@@ -436,7 +436,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/webm; codecs="vp9"',
@@ -461,7 +461,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/mp4; codecs="avc1.4d401f"',
@@ -486,7 +486,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/webm; codecs="vp9"',
@@ -511,7 +511,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/mp4; codecs="avc1.4d401e"',
@@ -537,7 +537,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/webm; codecs="vp9"',
@@ -562,7 +562,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/mp4; codecs="avc1.4d4015"',
@@ -587,7 +587,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/webm; codecs="vp9"',
@@ -612,7 +612,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/mp4; codecs="avc1.42c00b"',
@@ -637,7 +637,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'video/webm; codecs="vp9"',
@@ -662,7 +662,7 @@ export const liveFormats: (
     audioCodec: null,
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
+    isDashMPD: false
   },
   {
     mimeType: 'audio/mp4; codecs="mp4a.40.2"',
@@ -688,6 +688,6 @@ export const liveFormats: (
     audioCodec: "mp4a.40.2",
     isLive: true,
     isHLS: false,
-    isDashMPD: false,
-  },
+    isDashMPD: false
+  }
 ];

@@ -1,40 +1,32 @@
 import ytsr from "@distube/ytsr";
+import type { Client, GuildTextBasedChannel, VoiceBasedChannel } from "discord.js";
 import { TypedEmitter } from "tiny-typed-emitter";
+
+import { defaultFilters } from "./constant";
+import { DisTubeHandler } from "./core/DisTubeHandler";
+import { Options } from "./core/DisTubeOptions";
+import { DisTubeVoiceManager } from "./core/manager/DisTubeVoiceManager";
+import { QueueManager } from "./core/manager/QueueManager";
+import { DirectLinkPlugin } from "./plugin/DirectLink";
+import type { CustomPlugin } from "./struct/CustomPlugin";
+import { DisTubeError } from "./struct/DisTubeError";
+import type { ExtractorPlugin } from "./struct/ExtractorPlugin";
+import { Playlist } from "./struct/Playlist";
+import type { Queue } from "./struct/Queue";
+import { SearchResult, SearchResultPlaylist, SearchResultVideo } from "./struct/SearchResult";
+import { Song } from "./struct/Song";
+import type { CustomPlaylistOptions, DisTubeOptions, Filters, PlayOptions, TypedDisTubeEvents } from "./type";
+import { GuildIdResolvable, SearchResultType } from "./type";
 import {
-  DirectLinkPlugin,
-  DisTubeError,
-  DisTubeHandler,
-  DisTubeVoiceManager,
-  Options,
-  Playlist,
-  QueueManager,
-  SearchResultPlaylist,
-  SearchResultType,
-  SearchResultVideo,
-  Song,
   checkIntents,
-  defaultFilters,
   isClientInstance,
   isMemberInstance,
   isMessageInstance,
   isObject,
   isSupportedVoiceChannel,
   isTextChannelInstance,
-  isURL,
-} from ".";
-import type { Client, GuildTextBasedChannel, VoiceBasedChannel } from "discord.js";
-import type {
-  CustomPlaylistOptions,
-  CustomPlugin,
-  DisTubeOptions,
-  ExtractorPlugin,
-  Filters,
-  GuildIdResolvable,
-  PlayOptions,
-  Queue,
-  SearchResult,
-  TypedDisTubeEvents,
-} from ".";
+  isURL
+} from "./util";
 
 // Cannot be `import` as it's not under TS root dir
 // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
@@ -157,7 +149,7 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
   async play(
     voiceChannel: VoiceBasedChannel,
     song: string | Song | SearchResult | Playlist,
-    options: PlayOptions = {},
+    options: PlayOptions = {}
   ): Promise<void> {
     if (!isSupportedVoiceChannel(voiceChannel)) {
       throw new DisTubeError("INVALID_TYPE", "BaseGuildVoiceChannel", voiceChannel, "voiceChannel");
@@ -168,7 +160,7 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
       member: voiceChannel.guild.members.me ?? undefined,
       textChannel: options?.message?.channel,
       skip: false,
-      ...options,
+      ...options
     };
     const position = Number(options.position) || (skip ? 1 : 0);
 
@@ -213,7 +205,9 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
         try {
           e.name = "PlayError";
           e.message = `${typeof song === "string" ? song : song.url}\n${e.message}`;
-        } catch {}
+        } catch {
+          console.error(e);
+        }
       }
       throw e;
     } finally {
@@ -237,13 +231,13 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
    */
   async createCustomPlaylist(
     songs: (string | Song | SearchResult)[],
-    options: CustomPlaylistOptions = {},
+    options: CustomPlaylistOptions = {}
   ): Promise<Playlist> {
     const { member, properties, parallel, metadata } = { parallel: true, ...options };
     if (!Array.isArray(songs)) throw new DisTubeError("INVALID_TYPE", "Array", songs, "songs");
     if (!songs.length) throw new DisTubeError("EMPTY_ARRAY", "songs");
     const filteredSongs = songs.filter(
-      song => song instanceof Song || isURL(song) || (typeof song !== "string" && song.type === SearchResultType.VIDEO),
+      song => song instanceof Song || isURL(song) || (typeof song !== "string" && song.type === SearchResultType.VIDEO)
     );
     if (!filteredSongs.length) throw new DisTubeError("NO_VALID_SONG");
     if (member && !isMemberInstance(member)) {
@@ -252,7 +246,7 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
     let resolvedSongs: Song[];
     if (parallel) {
       const promises = filteredSongs.map((song: string | Song | SearchResult) =>
-        this.handler.resolve(song, { member, metadata }).catch(() => undefined),
+        this.handler.resolve(song, { member, metadata }).catch(() => undefined)
       );
       resolvedSongs = (await Promise.all(promises)).filter((s: any): s is Song => !!s);
     } else {
@@ -267,15 +261,15 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
 
   search(
     string: string,
-    options?: { type?: SearchResultType.VIDEO; limit?: number; safeSearch?: boolean; retried?: boolean },
+    options?: { type?: SearchResultType.VIDEO; limit?: number; safeSearch?: boolean; retried?: boolean }
   ): Promise<Array<SearchResultVideo>>;
   search(
     string: string,
-    options: { type: SearchResultType.PLAYLIST; limit?: number; safeSearch?: boolean; retried?: boolean },
+    options: { type: SearchResultType.PLAYLIST; limit?: number; safeSearch?: boolean; retried?: boolean }
   ): Promise<Array<SearchResultPlaylist>>;
   search(
     string: string,
-    options?: { type?: SearchResultType; limit?: number; safeSearch?: boolean; retried?: boolean },
+    options?: { type?: SearchResultType; limit?: number; safeSearch?: boolean; retried?: boolean }
   ): Promise<Array<SearchResult>>;
   /**
    * Search for a song. You can customize how user answers instead of send a number.
@@ -296,7 +290,7 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
       limit?: number;
       safeSearch?: boolean;
       retried?: boolean;
-    } = {},
+    } = {}
   ): Promise<Array<SearchResult>> {
     const opts = { type: SearchResultType.VIDEO, limit: 10, safeSearch: false, ...options };
     if (typeof opts.type !== "string" || !["video", "playlist"].includes(opts.type)) {
@@ -604,7 +598,7 @@ export class DisTube extends TypedEmitter<TypedDisTubeEvents> {
       console.error(error);
       console.warn("Unhandled 'error' event.");
       console.warn(
-        "See: https://distube.js.org/#/docs/DisTube/stable/class/DisTube?scrollTo=e-error and https://nodejs.org/api/events.html#events_error_events",
+        "See: https://distube.js.org/#/docs/DisTube/stable/class/DisTube?scrollTo=e-error and https://nodejs.org/api/events.html#events_error_events"
       );
       /* eslint-enable no-console */
     }

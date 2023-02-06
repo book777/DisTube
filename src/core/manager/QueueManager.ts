@@ -1,7 +1,13 @@
-import { GuildIdManager } from ".";
-import { DisTubeError, DisTubeStream, Queue, RepeatMode, objectKeys } from "../..";
-import type { QueueManagerOptions, Song } from "../..";
 import type { GuildTextBasedChannel, VoiceBasedChannel } from "discord.js";
+
+import { DisTubeError } from "../../struct/DisTubeError";
+import { Queue } from "../../struct/Queue";
+import type { Song } from "../../struct/Song";
+import type { QueueManagerOptions } from "../../type";
+import { RepeatMode } from "../../type";
+import { objectKeys } from "../../util";
+import { DisTubeStream } from "../DisTubeStream";
+import { GuildIdManager } from "./GuildIdManager";
 
 /**
  * Queue manager
@@ -26,12 +32,12 @@ export class QueueManager extends GuildIdManager<Queue> {
     channel: VoiceBasedChannel,
     song: Song[] | Song,
     textChannel?: GuildTextBasedChannel,
-    options?: QueueManagerOptions,
+    options?: QueueManagerOptions
   ): Promise<Queue | true> {
     if (this.has(channel.guildId)) throw new DisTubeError("QUEUE_EXIST");
     const voice = this.voices.create(channel);
     const queue = new Queue(this.distube, voice, song, textChannel, {
-      volume: options?.volume,
+      volume: options?.volume
     });
     await queue._taskQueue.queuing();
     try {
@@ -67,7 +73,7 @@ export class QueueManager extends GuildIdManager<Queue> {
         if (error) this.emitError(error, queue.textChannel);
       },
       error: error => this.#handlePlayingError(queue, error),
-      finish: () => this.#handleSongFinish(queue),
+      finish: () => this.#handleSongFinish(queue)
     };
     for (const event of objectKeys(queue._listeners)) {
       queue.voice.on(event, queue._listeners[event]);
@@ -147,7 +153,9 @@ export class QueueManager extends GuildIdManager<Queue> {
     try {
       error.name = "PlayingError";
       error.message = `${error.message}\nId: ${song.id}\nName: ${song.name}`;
-    } catch {}
+    } catch (e) {
+      console.error(e);
+    }
     this.emitError(error, queue.textChannel);
     if (queue.songs.length > 0) {
       queue._next = queue._prev = false;
