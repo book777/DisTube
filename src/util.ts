@@ -70,8 +70,7 @@ export function isURL(input: any): input is `http://${string}` | `https://${stri
   try {
     const url = new URL(input);
     if (!["https:", "http:"].includes(url.protocol) || !url.host) return false;
-  } catch (e) {
-    console.error(e);
+  } catch {
     return false;
   }
   return true;
