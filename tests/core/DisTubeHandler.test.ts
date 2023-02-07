@@ -2,8 +2,16 @@ import * as _ytdl from "@distube/ytdl-core";
 import * as _ytpl from "@distube/ytpl";
 
 import type { DisTubeOptions } from "@";
-import { defaultFilters, defaultOptions, DisTubeError, DisTubeHandler } from "@";
-import { Playlist, SearchResultPlaylist, SearchResultVideo, Song } from "@/struct";
+import {
+  defaultFilters,
+  defaultOptions,
+  DisTubeError,
+  DisTubeHandler,
+  Playlist,
+  SearchResultPlaylist,
+  SearchResultVideo,
+  Song
+} from "@";
 import * as _Queue from "@/struct/Queue";
 import * as _Util from "@/util";
 
